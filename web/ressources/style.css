@@ -786,7 +786,7 @@ button {
 .rs-header .menu-area .rs-menu li.current-menu-item > a,
 .rs-header .menu-area .rs-menu li.active > a,
 .rs-header .menu-area .rs-menu li a:hover {
-  color: #1d7801 !important;
+  color: #0d3401 !important;
 }
 .rs-header .menu-area .rs-menu ul li ul li.current_page_item > a,
 .rs-header .menu-area .rs-menu ul li ul li.current-menu-item > a,
@@ -899,7 +899,7 @@ button {
 /* ----- Menu -------*/
 .menu-area .rs-menu > ul > li > a:hover,
 .menu-area .rs-menu li.current_page_item > a {
-  color: #1d7801 !important;
+  color: #0d3401 !important;
 }
 .nav-menu > li > a {
   font-weight: 400;
@@ -5095,7 +5095,7 @@ button {
     -webkit-transition: 0.3s;
   }
   .menu-sticky.sticky {
-    background: #111111;
+    background: #606363;
     position: fixed !important;
     z-index: 999;
     margin: 0 auto !important;
@@ -5116,7 +5116,7 @@ button {
     line-height: 70px;
   }
   .rs-header.inner-page .menu-area.sticky {
-    background: #111111;
+    background: #606363;
   }
   .home4 .rs-about .about-des,
   .home5 .rs-about .about-des {

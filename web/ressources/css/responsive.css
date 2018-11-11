@@ -1,20 +1,5 @@
 @charset "utf-8";
 
-/**
-*
-* -----------------------------------------------------------------------------
-*
-* Template : Eventsia | Responsive Events HTML5 Template 
-* Author : rs-theme
-* Author URI : http://www.rstheme.com/
-*
-* -----------------------------------------------------------------------------
-*
-**/
-
-/* Layout: Large Devices. */
-
-/* Layout: Large Devices. */
 @media only screen and (max-width: 1440px) {
     #rs-team3 .owl-carousel .team-item .team-img .normal-text{
         bottom: -23%;
@@ -494,7 +479,7 @@
         position: static !important;
         transition: 0s;
         -webkit-transition: 0s;
-        background: #000929;
+        background: #414343;
     }
     .rs-header .rs-menu-toggle{
         color: #fff !important;
