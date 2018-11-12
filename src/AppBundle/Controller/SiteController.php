@@ -35,7 +35,7 @@ class SiteController extends Controller
             return $this->redirectToRoute('backend_site_index');
         }
 
-        $sites = $em->getRepository('AppBundle:Site')->findList();
+        $sites = $em->getRepository('AppBundle:Site')->findList()->getQuery()->getResult();
 
         return $this->render('site/index.html.twig', array(
             'sites' => $sites,
@@ -105,7 +105,7 @@ class SiteController extends Controller
             return $this->redirectToRoute('backend_site_index');
         }
 
-        $sites = $em->getRepository('AppBundle:Site')->findList();
+        $sites = $em->getRepository('AppBundle:Site')->findList()->getQuery()->getResult();
 
         return $this->render('site/edit.html.twig', array(
             'site' => $site,

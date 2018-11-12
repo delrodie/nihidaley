@@ -305,7 +305,7 @@ class Site
      *
      * @return Site
      */
-    public function addActivite(\AppBundle\Entity\Actvite $activite)
+    public function addActivite(\AppBundle\Entity\Activite $activite)
     {
         $this->activites[] = $activite;
 
@@ -317,7 +317,7 @@ class Site
      *
      * @param \AppBundle\Entity\Actvite $activite
      */
-    public function removeActivite(\AppBundle\Entity\Actvite $activite)
+    public function removeActivite(\AppBundle\Entity\Activite $activite)
     {
         $this->activites->removeElement($activite);
     }

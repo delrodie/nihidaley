@@ -17,7 +17,7 @@ class SiteRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->createQueryBuilder('s')
                     ->orderBy('s.libelle', 'ASC')
-                    ->getQuery()->getResult()
+                    //->getQuery()->getResult()
             ;
     }
 }

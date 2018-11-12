@@ -83,7 +83,7 @@ class Activite
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Site", inversedBy="activites")
-     * @ORM\JoinColumn(name="activite_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="site_id", referencedColumnName="id")
      */
     private $lieu;
 
