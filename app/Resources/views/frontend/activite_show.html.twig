@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ activite.titre }} {% endblock %}
+
+{% block body %}
+    <div class="rs-breadcrumbs">
+        <img src="{{ absolute_url(asset('ressources/img/bg2.jpg')) }}" alt="" />
+    </div>
+    <div class="rs-event-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="event-details-content">
+                        <div class="event-title">
+                            <a href="#">{{ activite.titre }}</a>
+                        </div>
+                        <div class="event-meta">
+                            <div class="event-date">
+                                <i class="fa fa-calendar"></i>
+                                <span>{{ activite.date|date('d M Y') }}</span>
+                            </div>
+                            <div class="event-time">
+                                <i class="fa fa-clock-o"></i>
+                                <span>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</span>
+                            </div>
+                            <div class="event-location">
+                                <i class="fa fa-map-marker"></i>
+                                <span><a href="#">{{ activite.lieu.libelle }}</a></span>
+                            </div>
+                        </div>
+                        <div class="event-img">
+                            {% if activite.imageName %}
+                                <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(activite, 'imageFile') }}" alt="{{ activite.titre }}">
+                            {% else %}
+                                <img class="card-img-top img-responsive" src="{{ absolute_url(asset('ressources/img/activites/01.jpg')) }}" alt="{{ activite.titre }}" width="250">
+                            {% endif %}
+                        </div>
+                        <div class="event-desc">
+                            {{ activite.contenu|raw }}
+                        </div>
+
+                        <!-- map -->
+                        {{ activite.lieu.localisation|raw }}
+                        <!-- map end -->
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mmt-40">
+                    <div class="sidebar-area">
+
+                        <div class="latest-courses">
+                            <h4 class="title">Programme du 01/12/2018</h4>
+                            <div class="post-item">
+                                <div class="">
+                                    <h4><a href="#"> <i class="fa fa-clock-o"></i> 11h - 14h </a></h4>
+                                    <span class="date">Ouverture officielle du village Tonkpi Nihidaley Et de l’espace gastronomique</span>
+                                </div>
+                            </div>
+                            <div class="post-item">
+                                <div class="">
+                                    <h4><a href="#"><i class="fa fa-clock-o"></i> 15h - 18h </a></h4>
+                                    <span class="date">Lancement des sports patrimoniaux</span>
+                                </div>
+                            </div>
+                            <div class="post-item">
+                                <div class="">
+                                    <h4><a href="#"><i class="fa fa-clock-o"></i> 20h - 23h </a></h4>
+                                    <span class="date">Animation  avec les sponsors (camion podium)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tags-cloud clearfix">
+                            <div id="fb-root"></div>
+                            <div class="fb-page" data-href="https://www.facebook.com/Tonkpi-Nihidaley-170517840297799/" data-tabs="timeline"  data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Tonkpi-Nihidaley-170517840297799/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Tonkpi-Nihidaley-170517840297799/">Tonkpi Nihidaley: Festival des Arts et de la Culture Dan</a></blockquote></div>
+                        </div><!-- .tags-cloud end -->
+                    </div><!-- .sidebar-area end -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -79,7 +79,7 @@
                         <a class="rs-menu-toggle"><i class="fa fa-bars"></i>Menu</a>
                         <nav class="rs-menu">
                             <ul class="nav-menu">
-                                <li> <a href="{{ absolute_url(path('homepage')) }}">Accueil</a></li>
+                                <li> <a href="{{ absolute_url(path('homepage')) }}"><i class="fa fa-home"></i></a></li>
                                 <li> <a href="#">Actualités</a></li>
                                 <li class="menu-item-has-children"> <a href="#">Le festival</a>
                                     <ul class="sub-menu">
@@ -92,7 +92,7 @@
                                                 <li><a href="#">Les Commissions opérationnelles</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Les activités</a></li>
+                                        <li><a href="{{ absolute_url(path('frontend_activite_index')) }}">Les activités</a></li>
                                         <li><a href="#">Le Programme</a></li>
                                     </ul>
                                 </li>
@@ -101,6 +101,13 @@
                                         <li><a href="#">Transport</a></li>
                                         <li><a href="#">Hebergement</a></li>
                                         <li><a href="#">Restauration</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children"> <a href="#">Tourisme</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Cascade</a></li>
+                                        <li><a href="#">Ponts de lianes</a></li>
+                                        <li><a href="#">Espaces singuliers</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children"> <a href="#">Médiathèque</a>

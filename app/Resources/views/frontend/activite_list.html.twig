@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Liste des activités {% endblock %}
+
+{% block body %}
+    <div class="rs-breadcrumbs">
+        <img src="{{ absolute_url(asset('ressources/img/bg2.jpg')) }}" alt="" />
+    </div>
+    <div class="rs-upcoming-event" id="rs-upcoming-event">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    {% for activite in activites %}
+                        <div class="row rs-vertical-middle">
+                            <div class="col-lg-12 col-md-12 pl-0">
+                                <div class="events-details">
+                                    <ul class="meta-date">
+                                        <li class="date"><i class="icofont icofont-calendar"></i> {{ activite.date|date('d M Y') }}</li>
+                                        <li class="title"><i class="icofont icofont-wall-clock"></i>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</li>
+                                    </ul>
+                                    <h4 class="event-title"><a href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}">{{ activite.titre }}</a></h4>
+                                    <p class="event-dsc">
+                                        {{ activite.resume|raw }}
+                                    </p>
+                                    <a href="{{ absolute_url(path('frontend_activite_show', {'slug': activite.slug})) }}" class="primary-btn">Lire la suite</a>
+                                </div>
+                            </div>
+                        </div><!-- fin {{ activite.titre }} -->
+                    {% endfor %}
+                </div>
+                <div class="col-lg-4 col-md-12 mmt-40">
+                    <div class="sidebar-area">
+
+                        <div class="latest-courses">
+                            <h4 class="title">Programme du 01/12/2018</h4>
+                            <div class="post-item">
+                                <div class="">
+                                    <h4><a href="#"> <i class="fa fa-clock-o"></i> 11h - 14h </a></h4>
+                                    <span class="date">Ouverture officielle du village Tonkpi Nihidaley Et de l’espace gastronomique</span>
+                                </div>
+                            </div>
+                            <div class="post-item">
+                                <div class="">
+                                    <h4><a href="#"><i class="fa fa-clock-o"></i> 15h - 18h </a></h4>
+                                    <span class="date">Lancement des sports patrimoniaux</span>
+                                </div>
+                            </div>
+                            <div class="post-item">
+                                <div class="">
+                                    <h4><a href="#"><i class="fa fa-clock-o"></i> 20h - 23h </a></h4>
+                                    <span class="date">Animation  avec les sponsors (camion podium)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tags-cloud clearfix">
+                            <div id="fb-root"></div>
+                            <div class="fb-page" data-href="https://www.facebook.com/Tonkpi-Nihidaley-170517840297799/" data-tabs="timeline"  data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Tonkpi-Nihidaley-170517840297799/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Tonkpi-Nihidaley-170517840297799/">Tonkpi Nihidaley: Festival des Arts et de la Culture Dan</a></blockquote></div>
+                        </div><!-- .tags-cloud end -->
+                    </div><!-- .sidebar-area end -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
