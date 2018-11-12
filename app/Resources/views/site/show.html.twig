@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Site</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ site.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ site.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Localistaion</th>
+                <td>{{ site.localistaion }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{% if site.statut %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ site.slug }}</td>
+            </tr>
+            <tr>
+                <th>Publiepar</th>
+                <td>{{ site.publiePar }}</td>
+            </tr>
+            <tr>
+                <th>Modifiepar</th>
+                <td>{{ site.modifiePar }}</td>
+            </tr>
+            <tr>
+                <th>Publiele</th>
+                <td>{{ site.publieLe }}</td>
+            </tr>
+            <tr>
+                <th>Modifiele</th>
+                <td>{{ site.modifieLe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('backend_site_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('backend_site_edit', { 'id': site.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

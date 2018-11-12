@@ -32,9 +32,9 @@ class Site
     /**
      * @var string
      *
-     * @ORM\Column(name="localistaion", type="text", nullable=true)
+     * @ORM\Column(name="localisation", type="text", nullable=true)
      */
-    private $localistaion;
+    private $localisation;
 
     /**
      * @var bool
@@ -44,7 +44,7 @@ class Site
     private $statut;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Actvite", mappedBy="lieu")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Activite", mappedBy="lieu")
      */
     private $activites;
 
@@ -124,27 +124,27 @@ class Site
     }
 
     /**
-     * Set localistaion
+     * Set localisation
      *
-     * @param string $localistaion
+     * @param string $localisation
      *
      * @return Site
      */
-    public function setLocalistaion($localistaion)
+    public function setlocalisation($localisation)
     {
-        $this->localistaion = $localistaion;
+        $this->localisation = $localisation;
 
         return $this;
     }
 
     /**
-     * Get localistaion
+     * Get localisation
      *
      * @return string
      */
-    public function getLocalistaion()
+    public function getlocalisation()
     {
-        return $this->localistaion;
+        return $this->localisation;
     }
 
     /**

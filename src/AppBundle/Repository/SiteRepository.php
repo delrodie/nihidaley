@@ -10,4 +10,14 @@ namespace AppBundle\Repository;
  */
 class SiteRepository extends \Doctrine\ORM\EntityRepository
 {
+    /*
+     * Liste par ordre alphabetique
+     */
+    public function FindList()
+    {
+        return $this->createQueryBuilder('s')
+                    ->orderBy('s.libelle', 'ASC')
+                    ->getQuery()->getResult()
+            ;
+    }
 }
