@@ -1,21 +1,21 @@
 {% extends 'backend.html.twig' %}
 
-{% block title %}{{ parent() }} Enregistrement des activités{% endblock %}
+{% block title %}{{ parent() }} Enregistrement des presidents{% endblock %}
 
 {% block body %}
     <section class="content-header">
         <h1>Enregistrement d'une activité</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
-            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_activite_index'))}}">activité</a></li>
-            <li class="breadcrumb-item active">Enregistrement d'un nouvel activité</li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_presidence_index'))}}">Comite</a></li>
+            <li class="breadcrumb-item active">Enregistrement d'un nouveau president</li>
         </ol>
     </section>
     <section class="content">
         <div class="row">
             <div class="box box-warning">
                 <div class="box-header text-right">
-                    <a href="{{ absolute_url(path('backend_activite_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des activités</a>
+                    <a href="{{ absolute_url(path('backend_presidence_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des presidents</a>
                 </div>
                 <div class="box-body">
                     <div class="row justify-content-center">
@@ -24,62 +24,52 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                                     <div class="form-group">
-                                        <label class="col-sm-12 control-label text-left">Lieu</label>
-                                        <div class="col-sm-12">
-                                            {{ form_widget(form.lieu)}}
-                                            <span class="help-block">{{ form_errors(form.lieu)}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
                                         <label class="col-sm-12 control-label text-left">Titre</label>
                                         <div class="col-sm-12">
-                                            {{ form_widget(form.titre)}}
-                                            <span class="help-block">{{ form_errors(form.titre)}}</span>
+                                            {{ form_widget(form.type)}}
+                                            <span class="help-block">{{ form_errors(form.type)}}</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-12 control-label text-left">Mots clés</label>
+                                        <label class="col-sm-12 control-label text-left">Identité</label>
                                         <div class="col-sm-12">
-                                            {{ form_widget(form.tags)}}
-                                            <span class="help-block">{{ form_errors(form.tags)}}</span>
+                                            {{ form_widget(form.identite)}}
+                                            <span class="help-block">{{ form_errors(form.identite)}}</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-12 control-label text-left">Date</label>
-                                        <div class="col-sm-12" id="webzine-datepicker">
-                                            <div class="input-group date">
-                                                {{ form_widget(form.date) }}
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-calendar-o"></i>
-                                                </div>
-                                            </div>
+                                        <label class="col-sm-12 control-label text-left">Fonction</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.fonction)}}
+                                            <span class="help-block">{{ form_errors(form.fonction)}}</span>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <label for="" class="col-sm-12 control-label text-left">Horaire</label>
-                                        <div class="form-group col-sm-6 bootstrap-timepicker">
-                                            <div class="input-group">
-                                                {{ form_widget(form.heuredeb) }}
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-clock-o"></i>
-                                                </div>
-                                            </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Contact</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.contact)}}
+                                            <span class="help-block">{{ form_errors(form.contact)}}</span>
                                         </div>
-                                        <div class="form-group col-sm-6 bootstrap-timepicker">
-                                            <div class="input-group date">
-                                                {{ form_widget(form.heurefin) }}
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-clock-o"></i>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Email</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.email)}}
+                                            <span class="help-block">{{ form_errors(form.email)}}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                                     <div class="form-group">
-                                        <label for="" class="col-sm-12 control-label text-left">Contenu</label>
+                                        <label for="" class="col-sm-12 control-label text-left">Mission</label>
                                         <div class="col-sm-12">
-                                            {{ form_widget(form.contenu)}}
+                                            {{ form_widget(form.mission)}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-12 control-label text-left">Activite</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.activite)}}
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -93,7 +83,7 @@
                                         <div class="col-sm-12 control-label text-left"></div>
                                         <div class="checkbox col-sm-12">
                                             {{ form_widget(form.statut)}}
-                                            <label for="appbundle_activite_statut">Activé</label>
+                                            <label for="appbundle_presidence_statut">Activé</label>
                                         </div>
                                     </div>
                                 </div>
@@ -118,8 +108,6 @@
     {% stylesheets
         'backoffice/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css'
         'backoffice/tags/tagsinput.css'
-        'backoffice/assets/vendor_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'
-        'backoffice/assets/timepicker/jquery.timepicker.min.css'
         filter='cssrewrite' output='backoffice/css/editeur.css'
     %}
         <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
@@ -131,28 +119,12 @@
     {% javascripts
         'backoffice/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js'
         'backoffice/js/pages/editor.js'
-        'backoffice/tags/tagsinput.js'
-        'backoffice/assets/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'
-        'backoffice/assets/timepicker/jquery.timepicker.min.js'
-        'backoffice/js/pages/bootstrap-datepicker.fr.min.js'
         output='backoffice/js/editeur.js'
     %}
         <script src="{{ absolute_url(asset_url)}}"></script>
     {% endjavascripts %}
     <script>
-        $('#webzine-datepicker input').datepicker({
-            format: "yyyy-mm-dd",
-            todayBtn: "linked",
-            clearBtn: true,
-            language: "fr",
-            multidate: false,
-            autoclose: true
-        });
-        $('.timepicker').timepicker({
-            'timeFormat': 'H:i:s',
-            showInputs: false
-        });
-        $('#appbundle_activite_contenu').wysihtml5();
+        $('#appbundle_presidence_activite').wysihtml5();
     </script>
 
 {% endblock %}
