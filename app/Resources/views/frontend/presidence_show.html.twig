@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ president.type.libelle }} {{ president.fonction }} {{ president.identite }} {% endblock %}
+
+{% block body %}
+    <div class="rs-breadcrumbs">
+        <img src="{{ absolute_url(asset('ressources/img/bg2.jpg')) }}" alt="" />
+    </div>
+    <div class="rs-team-single sec-spacer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row team">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="team-photo mobile-mb-40">
+                                {% if president.imageName %}
+                                    <img src="{{ asset('uploads/comite/'~ president.imageName) | imagine_filter('comite') }}" alt="{{ president.identite }}" />
+                                {% else %}
+                                    <img src="{{ absolute_url(asset('ressources/img/comite/avatar.jpg')) }}" alt="{{ president.identite }}" />
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-lg-8 mmt-40 col-md-12">
+                            <h3 class="team-name">{{ president.identite }}</h3>
+                            <p class="team-title">
+                                {{ president.type.libelle }} {{ president.fonction }}
+                            </p>
+                            <p class="team-contact">
+                                {% if president.contact %}
+                                    <i class="icofont icofont-ui-cell-phone"></i> {{ president.contact }}
+                                {% endif %}
+                                {% if president.email %}
+                                    <i class="ml-15 icofont icofont-email"></i> {{ president.email }}
+                                {% endif %}
+                            </p>
+                            <p class="team-des">
+                            <h5>Mission:</h5>
+                            {{ president.mission }}
+                            </p>
+                            <div class="team-skill">
+                                <h5 class="skill-title">Activités:</h3>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ president.activite|raw }}
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar-area">
+
+                        <div class="latest-courses">
+                            <h4 class="title">Programme du 01/12/2018</h4>
+                            <div class="post-item">
+                                <div class="">
+                                    <h4><a href="#"> <i class="fa fa-clock-o"></i> 11h - 14h </a></h4>
+                                    <span class="date">Ouverture officielle du village Tonkpi Nihidaley Et de l’espace gastronomique</span>
+                                </div>
+                            </div><!-- .post-item end -->
+                            <div class="post-item">
+                                <div class="">
+                                    <h4><a href="#"><i class="fa fa-clock-o"></i> 15h - 18h </a></h4>
+                                    <span class="date">Lancement des sports patrimoniaux</span>
+                                </div>
+                            </div><!-- .post-item end -->
+                            <div class="post-item">
+                                <div class="">
+                                    <h4><a href="#"><i class="fa fa-clock-o"></i> 20h - 23h </a></h4>
+                                    <span class="date">Animation  avec les sponsors (camion podium)</span>
+                                </div>
+                            </div><!-- .post-item end -->
+                        </div>
+                    </div><!-- .sidebar-area end -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
