@@ -22,7 +22,7 @@
 
             <div class="row">
                 {% for activite in activites %}
-                    <div class="col-md-12 col-lg-3">
+                    <div class="col-md-12 col-lg-3 list-activite">
                         <div class="box box-default" style="height: 500px">
                             {% if activite.imageName %}
                                 <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(activite, 'imageFile') }}" alt="{{ activite.titre }}">
@@ -60,6 +60,18 @@
 
                 {% endfor %}
             </div>
+            <div class="paginator"></div>
 
     </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent () }}
+
+    <script src="{{ absolute_url(asset('ressources/js/pagination.js')) }}"></script>
+    <script>
+        $(document).ready(function() {
+            pagination(8,'.list-activite','.paginator',3);
+        });
+    </script>
 {% endblock %}

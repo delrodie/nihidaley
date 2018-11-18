@@ -27,6 +27,15 @@
                             </div>
                         </div><!-- fin {{ activite.titre }} -->
                     {% endfor %}
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12 text-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <div class="paginator"></div>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-12 mmt-40">
                     <div class="sidebar-area">
@@ -61,4 +70,15 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent () }}
+
+    <script src="{{ absolute_url(asset('ressources/js/pagination.js')) }}"></script>
+    <script>
+        $(document).ready(function() {
+            pagination(4,'.rs-vertical-middle','.paginator',3);
+        });
+    </script>
 {% endblock %}

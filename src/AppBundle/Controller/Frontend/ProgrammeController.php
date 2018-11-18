@@ -1,20 +1,25 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Frontend;
 
+
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+/**
+ * @Route("programme")
+ */
+class ProgrammeController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="frontend_programme_index")
      */
-    public function indexAction(Request $request)
+    public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $samedis01 = $em->getRepository('AppBundle:Activite')->findByDay('01'); //dump($samedis01);die();
+        $samedi01 = $em->getRepository('AppBundle:Activite')->findByDay('01'); //dump($samedis01);die();
         $dimanche02 = $em->getRepository('AppBundle:Activite')->findByDay('02'); //dump($samedis01);die();
         $lundi03 = $em->getRepository('AppBundle:Activite')->findByDay('03'); //dump($samedis01);die();
         $mardi04 = $em->getRepository('AppBundle:Activite')->findByDay('04'); //dump($samedis01);die();
@@ -24,8 +29,8 @@ class DefaultController extends Controller
         $samedi08 = $em->getRepository('AppBundle:Activite')->findByDay('08'); //dump($samedis01);die();
         $dimanche09 = $em->getRepository('AppBundle:Activite')->findByDay('09'); //dump($samedis01);die();
         $lundi10 = $em->getRepository('AppBundle:Activite')->findByDay('10'); //dump($samedis01);die();
-        return $this->render('default/index.html.twig', [
-            'samedis01' => $samedis01,
+        return $this->render('frontend/programme_list.html.twig', [
+            'samedi01' => $samedi01,
             'dimanche02' => $dimanche02,
             'lundi03' => $lundi03,
             'mardi04' => $mardi04,
@@ -36,13 +41,5 @@ class DefaultController extends Controller
             'dimanche09' => $dimanche09,
             'lundi10' => $lundi10,
         ]);
-    }
-
-    /**
-     * @Route("/backend/", name="backend")
-     */
-    public function backendAction()
-    {
-        return $this->render('default/dashboard.html.twig');
     }
 }

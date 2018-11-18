@@ -46,7 +46,7 @@ class ActiviteController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $resume = $utilities->resume($activite->getContenu(), 300, '...', true);
+            $resume = $utilities->resume($activite->getContenu(), 100, '...', true);
             $activite->setResume($resume);
             $em->persist($activite);
             $em->flush();
@@ -82,13 +82,15 @@ class ActiviteController extends Controller
      * @Route("/{slug}/edit", name="backend_activite_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Activite $activite)
+    public function editAction(Request $request, Activite $activite, Utilities $utilities)
     {
         $deleteForm = $this->createDeleteForm($activite);
         $editForm = $this->createForm('AppBundle\Form\ActiviteType', $activite);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $resume = $utilities->resume($activite->getContenu(), 100, '...', true);
+            $activite->setResume($resume);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('backend_activite_show', array('slug' => $activite->getSlug()));

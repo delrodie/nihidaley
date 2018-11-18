@@ -18,6 +18,17 @@ class ActiviteRepository extends \Doctrine\ORM\EntityRepository
         return $this->listDesc()->getQuery()->getResult();
     }
 
+    /**
+     * Liste des activites par jour
+     */
+    public function findByDay($day = null)
+    {
+        return $this->listDesc()->where('a.date = :day')
+                                ->setParameter('day', '2018-12-'.$day)
+                                ->getQuery()->getResult()
+            ;
+    }
+
     /*
      * Liste des activités par ordres croissant de date
      */
