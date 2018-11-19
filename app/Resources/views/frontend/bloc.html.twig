@@ -1,0 +1,20 @@
+<div class="sidebar-area">
+
+    <div class="latest-courses">
+        {% if (jour) %}
+            <h4 class="title">Programme du {{ jour  }}</h4>
+        {% endif %}
+        {% for activite in activites %}
+            <div class="post-item">
+                <div class="">
+                    <h4><a href="#"> <i class="fa fa-clock-o"></i> {{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }} </a></h4>
+                    <span class="date">{{ activite.titre }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="tags-cloud clearfix">
+        <div id="fb-root"></div>
+        <div class="fb-page" data-href="https://www.facebook.com/Tonkpi-Nihidaley-170517840297799/" data-tabs="timeline"  data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Tonkpi-Nihidaley-170517840297799/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Tonkpi-Nihidaley-170517840297799/">Tonkpi Nihidaley: Festival des Arts et de la Culture Dan</a></blockquote></div>
+    </div><!-- .tags-cloud end -->
+</div><!-- .sidebar-area end -->
