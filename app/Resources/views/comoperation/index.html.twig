@@ -1,0 +1,61 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent () }} Liste des membres de la commission operationnelle{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h1>Liste des membres de la commission operationnelle</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_comoperation_index'))}}">Comité d'Organisation</a></li>
+            <li class="breadcrumb-item active">Liste</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="box box-warning">
+            <div class="box-header text-right">
+                <a href="{{ absolute_url(path('backend_comoperation_new'))}}" class="btn btn-social btn-primary"><i class="fa fa-plus"></i>Ajouter une identité</a>
+            </div>
+
+            <div class="row">
+                {% for comoperation in comOperations %}
+                    <div class="col-md-12 col-lg-3">
+                        <div class="box box-default" style="height: 500px">
+                            {% if comoperation.imageName %}
+                                <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(comoperation, 'imageFile') }}" alt="{{ comoperation.identite }}">
+                            {% else %}
+                                <img class="card-img-top img-responsive" src="{{ absolute_url(asset('ressources/img/comite/avatar.jpg')) }}" alt="{{ comoperation.identite }}" width="250">
+                            {% endif %}
+                            <div class="box-body">
+                                <h4 class="card-title">
+                                    {% if comoperation.statut %}
+                                        <span class="badge badge-success">{{ comoperation.fonction }}</span>
+                                    {% else %}
+                                        <span class="badge badge-danger">{{ comoperation.fonction }}</span>
+                                    {% endif %}
+                                    {{ comoperation.identite }}
+                                </h4>
+                                <p class="card-text text-justify">{{ comoperation.mission|raw }}</p>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="{{ absolute_url(path('backend_comoperation_edit', {'slug': comoperation.slug})) }}" >
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier</button>
+                                    </a>
+                                    <a href="{{ absolute_url(path('backend_comoperation_show', {'slug': comoperation.slug})) }}" >
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i> Consulter</button>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                {% else %}
+
+                {% endfor %}
+            </div>
+
+    </section>
+{% endblock %}
