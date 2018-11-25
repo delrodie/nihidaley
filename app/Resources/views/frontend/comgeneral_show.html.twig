@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ commissaire.fonction }} {{ commissaire.identite }} {% endblock %}
+
+{% block body %}
+    <div class="rs-breadcrumbs">
+        <img src="{{ absolute_url(asset('ressources/img/bg2.jpg')) }}" alt="" />
+    </div>
+    <div class="rs-team-single sec-spacer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row team">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="team-photo mobile-mb-40">
+                                {% if commissaire.imageName %}
+                                    <img src="{{ asset('uploads/comite/'~ commissaire.imageName) | imagine_filter('comite') }}" alt="{{ commissaire.identite }}" />
+                                {% else %}
+                                    <img src="{{ absolute_url(asset('ressources/img/comite/avatar.jpg')) }}" alt="{{ commissaire.identite }}" />
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-lg-8 mmt-40 col-md-12">
+                            <h3 class="team-name">{{ commissaire.identite }}</h3>
+                            <p class="team-title">
+                                {{ commissaire.fonction }}
+                            </p>
+                            <p class="team-contact">
+                                {% if commissaire.contact %}
+                                    <i class="icofont icofont-ui-cell-phone"></i> {{ commissaire.contact }}
+                                {% endif %}
+                                {% if commissaire.email %}
+                                    <i class="ml-15 icofont icofont-email"></i> {{ commissaire.email }}
+                                {% endif %}
+                            </p>
+                            <p class="team-des">
+                            <h5>Mission:</h5>
+                            {{ commissaire.mission }}
+                            </p>
+                            <div class="team-skill">
+                                <h5 class="skill-title">Activités:</h3>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ commissaire.activite|raw }}
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    {{ render(url('frontend_bloc')) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
