@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des membres du Commissariat general du festival Tonkpi Nihidaley {% endblock %}
+{% block title %}Liste des membres de la commission operationelle du festival Tonkpi Nihidaley {% endblock %}
 
 {% block body %}
     <div class="rs-breadcrumbs">
@@ -12,22 +12,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="team-name text-center mb-5">LE COMMISSARIAT GENERAL</h2>
+                    <h2 class="team-name text-center mb-5">LA COMMISSION OPERATIONELLE</h2>
                 </div>
             </div>
             <div class="row">
-                {% for commissaire in commissaires %}
+                {% for operation in operations %}
                     <div class="col-lg-4 col-md-6">
                         <div class="team-item">
                             <div class="team-img">
-                                {% if commissaire.imageName %}
-                                    <img src="{{ asset('uploads/comite/'~ commissaire.imageName) | imagine_filter('comite') }}" alt="{{ commissaire.identite }}" />
+                                {% if operation.imageName %}
+                                    <img src="{{ asset('uploads/comite/'~ operation.imageName) | imagine_filter('comite') }}" alt="{{ operation.identite }}" />
                                 {% else %}
-                                    <img src="{{ absolute_url(asset('ressources/img/comite/avatar.jpg')) }}" alt="{{ commissaire.identite }}" />
+                                    <img src="{{ absolute_url(asset('ressources/img/comite/avatar.jpg')) }}" alt="{{ operation.identite }}" />
                                 {% endif %}_
                                 <div class="normal-text">
-                                    <h4 class="team-name">{{ commissaire.identite }} </h4>
-                                    <span class="subtitle">{{ commissaire.fonction }} </span>
+                                    <h4 class="team-name">{{ operation.identite }} </h4>
+                                    <span class="subtitle">{{ operation.fonction }} </span>
                                 </div>
                             </div>
                             <div class="team-content">
@@ -35,9 +35,9 @@
                                     <div class="display-table-cell">
                                         <div class="team-details">
                                             <h4 class="team-name">
-                                                <a href="{{ absolute_url(path('frontend_comgeneral_show', {'slug': commissaire.slug})) }}">{{ commissaire.identite }} </a>
+                                                <a href="{{ absolute_url(path('frontend_comoperation_show', {'slug': operation.slug})) }}">{{ operation.identite }} </a>
                                             </h4>
-                                            <span class="postion">{{ commissaire.fonction }}</span>
+                                            <span class="postion">{{ operation.fonction }}</span>
                                         </div>
                                     </div>
                                 </div>

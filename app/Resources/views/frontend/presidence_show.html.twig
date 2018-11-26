@@ -38,12 +38,18 @@
                             {{ president.mission }}
                             </p>
                             <div class="team-skill">
-                                <h5 class="skill-title">Activités:</h3>
+                                <h5 class="skill-title">Activités:</h5>
                                     <div class="row">
                                         <div class="col-md-12">
                                             {{ president.activite|raw }}
                                         </div>
                                     </div>
+
+                                <p class="text-right">
+                                    <a href="{{ absolute_url(path('frontend_presidence_index')) }}">
+                                        <i class="fa fa-reply"></i> Retour à liste des membres
+                                    </a>
+                                </p>
                             </div>
                         </div>
                     </div>

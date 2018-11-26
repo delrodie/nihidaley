@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ commissaire.fonction }} {{ commissaire.identite }} {% endblock %}
+{% block title %}{{ operation.fonction }} {{ operation.identite }} {% endblock %}
 
 {% block body %}
     <div class="rs-breadcrumbs">
@@ -13,40 +13,40 @@
                     <div class="row team">
                         <div class="col-lg-4 col-md-12">
                             <div class="team-photo mobile-mb-40">
-                                {% if commissaire.imageName %}
-                                    <img src="{{ asset('uploads/comite/'~ commissaire.imageName) | imagine_filter('comite') }}" alt="{{ commissaire.identite }}" />
+                                {% if operation.imageName %}
+                                    <img src="{{ asset('uploads/comite/'~ operation.imageName) | imagine_filter('comite') }}" alt="{{ operation.identite }}" />
                                 {% else %}
-                                    <img src="{{ absolute_url(asset('ressources/img/comite/avatar.jpg')) }}" alt="{{ commissaire.identite }}" />
+                                    <img src="{{ absolute_url(asset('ressources/img/comite/avatar.jpg')) }}" alt="{{ operation.identite }}" />
                                 {% endif %}
                             </div>
                         </div>
                         <div class="col-lg-8 mmt-40 col-md-12">
-                            <h3 class="team-name">{{ commissaire.identite }}</h3>
+                            <h3 class="team-name">{{ operation.identite }}</h3>
                             <p class="team-title">
-                                {{ commissaire.fonction }}
+                                {{ operation.fonction }}
                             </p>
                             <p class="team-contact">
-                                {% if commissaire.contact %}
-                                    <i class="icofont icofont-ui-cell-phone"></i> {{ commissaire.contact }}
+                                {% if operation.contact %}
+                                    <i class="icofont icofont-ui-cell-phone"></i> {{ operation.contact }}
                                 {% endif %}
-                                {% if commissaire.email %}
-                                    <i class="ml-15 icofont icofont-email"></i> {{ commissaire.email }}
+                                {% if operation.email %}
+                                    <i class="ml-15 icofont icofont-email"></i> {{ operation.email }}
                                 {% endif %}
                             </p>
                             <p class="team-des">
                             <h5>Mission:</h5>
-                            {{ commissaire.mission }}
+                            {{ operation.mission }}
                             </p>
                             <div class="team-skill">
                                 <h5 class="skill-title">Activités:</h5>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            {{ commissaire.activite|raw }}
+                                            {{ operation.activite|raw }}
                                         </div>
                                     </div>
 
                                 <p class="text-right">
-                                    <a href="{{ absolute_url(path('frontend_comgeneral_index')) }}">
+                                    <a href="{{ absolute_url(path('frontend_comoperation_index')) }}">
                                         <i class="fa fa-reply"></i> Retour à liste des membres
                                     </a>
                                 </p>
