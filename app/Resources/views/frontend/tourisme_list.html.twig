@@ -39,10 +39,10 @@
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="single-gallery">
                                 {% if photo.imageName %}
-                                    <img src="{{ asset('uploads/activites/'~ photo.imageName) | imagine_filter('comite') }}" alt="{{ tourisme.libelle }}" />
+                                    <img src="{{ asset('uploads/tourisme/'~ photo.imageName) | imagine_filter('comite') }}" alt="{{ tourisme.libelle }}" />
                                 {% endif %}
                                 <div class="popup-icon">
-                                    <a class="image-popup" href="{{ asset('uploads/activites/'~ photo.imageName) | imagine_filter('galerie') }}"><i class="fa fa-arrows-alt"></i></a>
+                                    <a class="image-popup" href="{{ asset('uploads/tourisme/'~ photo.imageName) | imagine_filter('galerie') }}"><i class="fa fa-arrows-alt"></i></a>
                                 </div>
                             </div>
                         </div>
