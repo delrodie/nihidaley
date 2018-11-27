@@ -1,0 +1,86 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des sites touristiques{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h1>Gestion des sites touristiques</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_tourismephoto_index'))}}">Tourisme</a></li>
+            <li class="breadcrumb-item active">Enregistrement</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="box box-warning">
+                <div class="box-header text-right">
+                    <a href="{{ absolute_url(path('backend_tourismephoto_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des sites</a>
+                </div>
+                <div class="box-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            {{ form_start(form, {'attr':{'class':'form-horizontal'}}) }}
+                            <div class="row">
+                                <div class="col-md-1 col-lg-2">.</div>
+                                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">tourisme</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.tourisme)}}
+                                            <span class="help-block">{{ form_errors(form.tourisme)}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Telecharger l'illustration</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.imageFile)}}
+                                            <span class="help-block">{{ form_errors(form.imageFile)}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{ form_rest(form) }}
+                        <div class="box-footer text-right">
+                            <button type="reset" class="btn btn-default">Annuler</button>
+                            <button type="submit" class="btn btn-info">Enregistrer</button>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {% stylesheets
+        'backoffice/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css'
+        'backoffice/tags/tagsinput.css'
+        'backoffice/assets/vendor_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'
+        'backoffice/assets/timepicker/jquery.timepicker.min.css'
+        filter='cssrewrite' output='backoffice/css/editeur.css'
+    %}
+        <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+    {% javascripts
+        'backoffice/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js'
+        'backoffice/js/pages/editor.js'
+        'backoffice/tags/tagsinput.js'
+        'backoffice/assets/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'
+        'backoffice/assets/timepicker/jquery.timepicker.min.js'
+        'backoffice/js/pages/bootstrap-datepicker.fr.min.js'
+        output='backoffice/js/editeur.js'
+    %}
+        <script src="{{ absolute_url(asset_url)}}"></script>
+    {% endjavascripts %}
+
+{% endblock %}

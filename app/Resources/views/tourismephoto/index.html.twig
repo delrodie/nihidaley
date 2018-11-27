@@ -1,0 +1,61 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent () }} Liste des photos{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h1>Liste des photos</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_tourismephoto_index'))}}">Evenementiels</a></li>
+            <li class="breadcrumb-item active">Liste des photos</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="box box-warning">
+            <div class="box-header text-right">
+                <a href="{{ absolute_url(path('backend_tourismephoto_new'))}}" class="btn btn-social btn-primary"><i class="fa fa-plus"></i>Ajouter un article</a>
+            </div>
+
+            <div class="row">
+                {% for photo in tourismePhotos %}
+                    <div class="col-md-12 col-lg-3 list-photo">
+                        <div class="box box-default" style="height: 300px">
+                            <a href="{{ absolute_url(path('backend_tourismephoto_edit', {'id': photo.id})) }}" >
+                                {% if photo.imageName %}
+                                    <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(photo, 'imageFile') }}" alt="{{ photo.tourisme.libelle }}">
+                                {% else %}
+                                    <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/logo.jpg')) }}" alt="{{ photo.tourisme.libelle }}" width="250">
+                                {% endif %}
+                            </a>
+                            <div class="box-body">
+                                <h4 class="card-title">
+                                    <span class="badge badge-success">{{ photo.tourisme.libelle }}</span>
+                                </h4>
+                            </div>
+
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                {% else %}
+
+                {% endfor %}
+            </div>
+            <div class="paginator"></div>
+
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent () }}
+
+    <script src="{{ absolute_url(asset('ressources/js/pagination.js')) }}"></script>
+    <script>
+        $(document).ready(function() {
+            pagination(8,'.list-activité','.paginator',3);
+        });
+    </script>
+{% endblock %}

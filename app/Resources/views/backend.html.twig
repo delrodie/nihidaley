@@ -159,6 +159,19 @@
                 </li>
                 <li class="treeview">
                     <a href="#">
+                        <i class="fa fa-files-o"></i>
+                        <span>Tourisme</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ absolute_url(path('backend_tourisme_index'))}}"><i class="fa fa-user-tie"></i> site</a></li>
+                        <li><a href="{{ absolute_url(path('backend_tourismephoto_index')) }}"><i class="fa fa-newspaper"></i> Photos</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
                         <i class="fas fa-bullhorn"></i>
                         <span>Pratique</span>
                         <span class="pull-right-container">
