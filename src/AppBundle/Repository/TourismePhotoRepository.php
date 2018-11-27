@@ -20,4 +20,17 @@ class TourismePhotoRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult()
             ;
     }
+
+    /**
+     * Liste correspondante a la selection
+     */
+    public function findBySite($slug)
+    {
+        return $this->createQueryBuilder('t')
+                    ->leftJoin('t.tourisme', 'm')
+                    ->where('m.slug = :slug')
+                    ->setParameter('slug', $slug)
+                    ->getQuery()->getResult()
+            ;
+    }
 }

@@ -75,7 +75,7 @@ class Tourisme
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="activite_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="tourisme_image", fileNameProperty="imageName", size="imageSize")
      *
      * @var File
      */
