@@ -38,6 +38,7 @@
         %}
             <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
         {% endstylesheets %}
+
     {% endblock %}
     <style>
         .rs-events-schedule .events-schedule-tabs .eventday-list {
@@ -56,6 +57,27 @@
         }
         .rs-events-schedule .events-schedule-tabs .eventday-list li + li {
             padding-left: 10px;
+        }
+        .flash-info{
+            font-weight: bold;
+            background-color: #bd2130;
+            color: #fff;
+        }
+        ul.list-info {
+            list-style: none;
+            padding: 0;
+        }
+        ul > li.info{
+            position: relative;
+            display: inline-block;
+            padding-right: 35px;
+            color: #fff;
+        }
+        li > span {
+            font-weight: bold;
+            background-color: #bd2130;
+            padding: 3px 15px;
+            margin-right: 10px;
         }
     </style>
     <!--[if lt IE 9]>
@@ -77,6 +99,24 @@
 
 <header id="rs-header" class="rs-header">
     <div class="menu-area menu-sticky">
+        <div class="row">
+            <div class="col-xs-hidden col-sm-hidden col-md-2"></div>
+            <div class="col-xs-3 col-sm-2 col-md-1 text-center">
+                <div class="flash-info">
+                    <span>INFOS</span>
+                </div>
+            </div>
+            <div class="col-xs-9 col-sm-10 col-md-8">
+                <marquee  direction="left" width="100%" scrollamount="3.5" onmouseover="this.stop()" onmouseout="this.start()">
+                    <ul class="list-info">
+                        <li class="info"><span> Information </span> Inscription au forum économique, veuillez contactez M. GAOUDE THIERRY</li>
+                        <li class="info"><span> Exposition</span> Inscription à l'exposition auprès de M. DAN ALBERT (+225 07 90 42 24)</li>
+                        <li class="info"><span> Concours </span> Le casting des Miss s'est deroulé à Man</li>
+                    </ul>
+                </marquee>
+
+            </div>
+        </div>
         <div class="container">
             <div class="main-menu">
                 <div class="row">

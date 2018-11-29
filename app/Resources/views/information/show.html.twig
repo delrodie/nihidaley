@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Information</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ information.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ information.type }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ information.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{% if information.statut %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datedeb</th>
+                <td>{{ information.datedeb }}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{{ information.datefin }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ information.slug }}</td>
+            </tr>
+            <tr>
+                <th>Publiepar</th>
+                <td>{{ information.publiePar }}</td>
+            </tr>
+            <tr>
+                <th>Modifiepar</th>
+                <td>{{ information.modifiePar }}</td>
+            </tr>
+            <tr>
+                <th>Publiele</th>
+                <td>{{ information.publieLe }}</td>
+            </tr>
+            <tr>
+                <th>Modifiele</th>
+                <td>{{ information.modifieLe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('backend_information_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('backend_information_edit', { 'id': information.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
