@@ -99,24 +99,8 @@
 
 <header id="rs-header" class="rs-header">
     <div class="menu-area menu-sticky">
-        <div class="row">
-            <div class="col-xs-hidden col-sm-hidden col-md-2"></div>
-            <div class="col-xs-3 col-sm-2 col-md-1 text-center">
-                <div class="flash-info">
-                    <span>INFOS</span>
-                </div>
-            </div>
-            <div class="col-xs-9 col-sm-10 col-md-8">
-                <marquee  direction="left" width="100%" scrollamount="3.5" onmouseover="this.stop()" onmouseout="this.start()">
-                    <ul class="list-info">
-                        <li class="info"><span> Information </span> Inscription au forum économique, veuillez contactez M. GAOUDE THIERRY</li>
-                        <li class="info"><span> Exposition</span> Inscription à l'exposition auprès de M. DAN ALBERT (+225 07 90 42 24)</li>
-                        <li class="info"><span> Concours </span> Le casting des Miss s'est deroulé à Man</li>
-                    </ul>
-                </marquee>
-
-            </div>
-        </div>
+        <!-- Listes des informations -->
+        {{ render(url('frontend_information_index')) }}
         <div class="container">
             <div class="main-menu">
                 <div class="row">
@@ -160,6 +144,13 @@
                                     <ul class="sub-menu">
                                         <li><a href="#">Galerie photo</a></li>
                                         <li><a href="#">Nihidaley TV</a></li>
+                                        <li>
+                                            <a href="#">Documentation</a>
+                                            <ul class="sub-menu left-menu">
+                                                <li><a href="#">Comptes Rendus</a></li>
+                                                <li><a href="#">Docs Utiles</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
 
                                 </li>

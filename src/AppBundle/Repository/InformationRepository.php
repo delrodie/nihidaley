@@ -20,4 +20,18 @@ class InformationRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult()
             ;
     }
+
+    /**
+     * Liste des information actives
+     */
+    public function findList($limit = null, $offset = null)
+    {
+        return $this->createQueryBuilder('i')
+                    ->where('i.statut = 1')
+                    ->andWhere(':date BETWEEN i.datedeb AND i.datefin')
+                    ->orderBy('i.datefin', 'ASC')
+                    ->setParameter('date', date('Y-m-d', time()))
+                    ->getQuery()->getResult()
+            ;
+    }
 }

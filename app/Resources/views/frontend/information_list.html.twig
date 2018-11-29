@@ -1,0 +1,20 @@
+{% if (informations) %}
+    <div class="row">
+        <div class="col-xs-hidden col-sm-hidden col-md-2"></div>
+        <div class="col-xs-3 col-sm-2 col-md-1 text-center">
+            <div class="flash-info">
+                <span>INFOS</span>
+            </div>
+        </div>
+        <div class="col-xs-9 col-sm-10 col-md-8">
+            <marquee  direction="left" width="100%" scrollamount="3.5" onmouseover="this.stop()" onmouseout="this.start()">
+                <ul class="list-info">
+                    {% for information in informations %}
+                        <li class="info"><span> {{ information.type }} </span> {{ information.libelle }}</li>
+                    {% endfor %}
+                </ul>
+            </marquee>
+
+        </div>
+    </div>
+{% endif %}

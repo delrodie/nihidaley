@@ -1,21 +1,21 @@
 {% extends 'backend.html.twig' %}
 
-{% block title %}{{ parent() }} Enregistrement des activités{% endblock %}
+{% block title %}{{ parent() }} Gestions des informations{% endblock %}
 
 {% block body %}
     <section class="content-header">
-        <h1>Enregistrement d'une activité</h1>
+        <h1>Gestions des informations</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
-            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_activite_index'))}}">activité</a></li>
-            <li class="breadcrumb-item active">Enregistrement d'un nouvel activité</li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_information_index'))}}">information</a></li>
+            <li class="breadcrumb-item active">Enregistrement</li>
         </ol>
     </section>
     <section class="content">
         <div class="row">
             <div class="box box-warning">
                 <div class="box-header text-right">
-                    <a href="{{ absolute_url(path('backend_activite_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des activités</a>
+                    <a href="{{ absolute_url(path('backend_information_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des informations</a>
                 </div>
                 <div class="box-body">
                     <div class="row justify-content-center">
@@ -123,7 +123,7 @@
             'timeFormat': 'H:i:s',
             showInputs: false
         });
-        $('#appbundle_activite_contenu').wysihtml5();
+        $('#appbundle_information_contenu').wysihtml5();
     </script>
 
 {% endblock %}
