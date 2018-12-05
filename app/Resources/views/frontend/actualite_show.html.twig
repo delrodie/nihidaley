@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Conférence de presse {% endblock %}
+{% block title %} {{ actualite.titre }} {% endblock %}
 
 {% block body %}
     <div class="rs-breadcrumbs">
@@ -12,103 +12,20 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12 text-justify">
                     <div class="single-image">
-                        <img src="{{ absolute_url(asset('ressources/img/page/2.JPG')) }}" alt="presentation">
+                        <img src="{{ vich_uploader_asset(actualite, 'imageFile') }}" alt="presentation">
                     </div>
-                    <h4 class="top-title">Conférence de presse</h4>
-                    <p>Le Mercredi 14 novembre 2018 à 10h, s'est tenue la conférence de presse relative à la deuxième édition FESTIVAL DES ARTS ET DE LA CULTURE DAN à la Maison de la
-                        Presse d'Abidjan
-                        <br>
-                        En effet, cette deuxième édition du Festival des Arts et la Culture
-                        DAN, dénommée Tonkpi Nihidaley aura lieu à Man du 1er au 10
-                        décembre 2018.</p>
-                    <p>Ce fut l'occasion pour le Professeur Lou Mathieu BAMBA, Commissaire Général de presenter le festival, à la grande famille de l'informatio et de la communication,
-                        et de donner les raisons de sa tenue cette année. </p>
-                    <p style="font-style:italic;"><strong>Que signifie donc, Tonkpi Nihidaley ? Et pourquoi une deuxième
-                            édition ?</strong></p>
-                    <p><strong><em>Tonkpi Nihidaley</em></strong> signifie littéralement la joie,
-                        le bonheur dans le Tonkpi, Tonkpi étant une région, la région des
-                        Montagnes. En d'autres termes, Tonkpi Nihidaley renvoie, chez les DAN,
-                        à une aspiration profonde au bonheur, à l’épanouissement et au bien-être
-                        dans le Tonkpi. En célébrant le Nihidaley, les DAN rêvent d’un devenir
-                        meilleur. C’est cette signification que le Conseil régional du Tonkpi donne
-                        à cette manifestation qui est à la fois festive et réflexive.</p>
-                    <p>S’agissant du pourquoi de la deuxième édiction, il faut rappeler que la
-                        première édition s’est déroulée à Man du 5 au 12 décembre 2017 et a
-                        donné beaucoup de satisfactions, notamment :</p>
-                    <ul class="blog-list">
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Une mobilisation massive des fils et filles de la région ainsi que de
-                            nombreuses populations venues de toute la Côte d’Ivoire et du
-                            monde entier. Plus de 100 000 visiteurs ont pu être dénombrés.</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Une prise de conscience de l’importance et de la valorisation de nos
-                            cultures. On s’est aperçu qu’à ce niveau, la culture transcende les
-                            divergences de tous genres, surtout politique.</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Une volonté de faire de la culture un socle de développement. A
-                            cette occasion les acteurs économiques ont vu leurs activités se
-                            multiplier.</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Une volonté de pérenniser la culture et de la bâtir sur des réflexions
-                            scientifiques, à travers un colloque comme moment fort de réflexion
-                            sur les fondamentaux de la culture DAN ; et à travers un Forum
-                            économique comme plate-forme de rencontre entre les porteurs de
-                            projets et les financiers.</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> une volonté de pérennisation qui s’est traduite aussi par la mise à
-                            disposition des étudiants de Master et de Doctorat de bourses de
-                            recherches sur les thèmes endogènes.</li>
-                    </ul>
-                    <p>C’est pour toutes ces raisons et les perspectives qu’elles permettent
-                        d’ouvrir pour le développement de la région du Tonkpi que l’aventure du
-                        Tonkpi Nihidaley entend continuer son chemin : d’où la deuxième édition,
-                        et comme nous l’espérons, les autres éditions à venir.</p>
+                    <h4 class="top-title">{{ actualite.titre     }}</h4>
                     <p>
-                        Mesdames et Messieurs, la deuxième édition qui se tiendra donc du 1er
-                        au 10 décembre 2018, comme indiqué tout à l’heure, comporte quelques
-                        innovations dont je voudrais me permettre de donner quelques éléments,
-                        à savoir :
-                        <ul class="blog-list">
-                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> La durée du Festival est passée de 5 à 10 jours pour donner plus
-                                de temps aux différents moments forts du Festival : comme le
-                                colloque et le forum économique qui auront chacun deux jours au
-                                lieu d’un seul comme par le passé</li>
-                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> Un pays invité. Cette année, c’est la République populaire de Chine,
-                                un pays qui s’est développé en s’appuyant sur sa culture. De ce
-                                point de vue, la Chine constitue un modèle dont la région du Tonkpi
-                                voudrait s’inspirer.</li>
-                            <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  Un peuple invité : cette année, c’est le peuple Baoulé. Il nous a fait
-                                l’honneur de nous inviter, il y a quelques années, à sa fête populaire,
-                                le Paquinou. Nous entendons le lui rendre de fort belle manière
-                                cette année.</li>
-                        </ul>
+                        {{ actualite.contenu|raw }}
                     </p>
-                    <p>
-                        Ces innovations viennent compléter les activités constituant l’ordinaire du
-                        Tonkpi Nihidaley, à savoir :
-                    </p>
-                    <ul class="blog-list">
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> les arts vivants, c’est-à-dire masques et danses traditionnelles ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>  les journées des femmes et des jeunes ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> la journée des peuples Frères et Alliés (Gagou, Guin, Gouro, Monan,
-                            Peulh, Sénoufo et Wan) ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> le Forum économique, portant spécifiquement cette année sur la
-                            promotion du café des montagnes et l’écotourisme ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> le Colloque, portant sur le thème, la culture et la cohésion sociale ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> les jeux et sports patrimoniaux, comme la course des masques et
-                            la lutte traditionnelle, le wenin, la toupie ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> la marche de la paix ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> le concours culinaire ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> les défilés de mode ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> l’exposition (produits agricoles, miniers et artisanaux) ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> le concours de beauté DAN ou le Seunga (pépite d’or) ;</li>
-                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i> le Nihidahikpi ou le jour de l’apothéose.</li>
-                    </ul>
-                    <p>
-                        Mesdames et Messieurs, comme vous le voyez, la moisson est
-                        abondante, je dirais même très abondante. La fête s’annonce belle, très
-                        belle. Nous attendons beaucoup de visiteurs qui, déjà s’annoncent, en
-                        provenance de toute la Côte d’Ivoire et du monde entier
-                    </p>
-                    <p>
-                        Nous voudrions aussi compter sur votre présence dans la majestueuse et
-                        coquette ville de Man.
-                    </p>
+
+                    <div class="row">
+                        <div class="col-md-12 pull-right text-right">
+                            <a href="{{ absolute_url(path('frontend_actualites')) }}">
+                                <i class="fa fa-home fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="col-lg-4 col-md-12 mmt-40">

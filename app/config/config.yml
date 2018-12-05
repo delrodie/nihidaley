@@ -175,6 +175,17 @@ liip_imagine:
                 # 4px larger to create a 2px border around the final image
                 background: { size: [700, 700], position: center, color: '#ffffff'}
 
+
+        actualite_pt:
+            quality: 100
+            filters:
+                # create a thumbnail: set size to 120x90 and use the "outbound" mode
+                # to crop the image when the size ratio of the input differs
+                thumbnail: { size: [370, 235], mode: inset }
+                # create a 2px black border: center the thumbnail on a black background
+                # 4px larger to create a 2px border around the final image
+                background: { size: [370, 235], position: center, color: '#ffffff'}
+
         base_thumb_w:
             quality: 100
             filters:
