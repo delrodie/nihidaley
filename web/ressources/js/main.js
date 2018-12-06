@@ -46,7 +46,7 @@
     var countdown3 = $('#countdown-3');
 	if(countdown3.length){
     $('#countdown-3').timeTo({
-        timeTo: new Date(new Date('Sat Dec 01 2018 11:00:00 GMT+0000 (Africa/Abidjan Time)')),
+        timeTo: new Date(new Date('Dec 10 2018 00:00:00 GMT+0000 (Africa/Abidjan Time)')),
         theme: "black",
         displayCaptions: true,
         fontSize: 48,

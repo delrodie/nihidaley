@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Galeriephoto</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ galeriePhoto.id }}</td>
+            </tr>
+            <tr>
+                <th>Imagename</th>
+                <td>{{ galeriePhoto.imageName }}</td>
+            </tr>
+            <tr>
+                <th>Imagesize</th>
+                <td>{{ galeriePhoto.imageSize }}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if galeriePhoto.updatedAt %}{{ galeriePhoto.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('backend_galeriephoto_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('backend_galeriephoto_edit', { 'id': galeriePhoto.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

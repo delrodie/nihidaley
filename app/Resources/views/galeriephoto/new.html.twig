@@ -1,0 +1,58 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des photos{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h1>Gestion des photos</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_galeriephoto_index'))}}">Mediathèque</a></li>
+            <li class="breadcrumb-item active">Enregistrement</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="box box-warning">
+                <div class="box-header text-right">
+                    <a href="{{ absolute_url(path('backend_galeriephoto_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des photos</a>
+                </div>
+                <div class="box-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            {{ form_start(form, {'attr':{'class':'form-horizontal'}}) }}
+                            <div class="row">
+                                <div class="col-md-1 col-lg-2">.</div>
+                                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Album photo</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.album)}}
+                                            <span class="help-block">{{ form_errors(form.album)}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Telecharger l'illustration</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.imageFile)}}
+                                            <span class="help-block">{{ form_errors(form.imageFile)}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{ form_rest(form) }}
+                        <div class="box-footer text-right">
+                            <button type="reset" class="btn btn-default">Annuler</button>
+                            <button type="submit" class="btn btn-info">Enregistrer</button>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+{% endblock %}
+

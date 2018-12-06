@@ -15,7 +15,19 @@ class ActiviteRepository extends \Doctrine\ORM\EntityRepository
      */
     public function findList($statut = null, $limit = null, $offset = null)
     {
-        return $this->listDesc()->getQuery()->getResult();
+        return $this->listDesc()->where('a.statut = :statut')->setParameter('statut', $statut)->getQuery()->getResult();
+    }
+
+    /**
+     * Liste des activités decroissantes
+     */
+    public function findListDesc()
+    {
+        return $this->createQueryBuilder('a')
+                    ->orderBy('a.date', 'DESC')
+                    ->addOrderBy('a.heuredeb', 'ASC')
+                    ->getQuery()->getResult()
+            ;
     }
 
     /**
@@ -23,7 +35,7 @@ class ActiviteRepository extends \Doctrine\ORM\EntityRepository
      */
     public function findByDay($day = null)
     {
-        return $this->listDesc()->where('a.date = :day')
+        return $this->listDesc()->where('a.date = :day')->andWhere('a.statut = 1')
                                 ->setParameter('day', '2018-12-'.$day)
                                 ->getQuery()->getResult()
             ;

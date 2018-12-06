@@ -25,7 +25,7 @@ class ActiviteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $activites = $em->getRepository('AppBundle:Activite')->findList();
+        $activites = $em->getRepository('AppBundle:Activite')->findListDesc();
 
         return $this->render('activite/index.html.twig', array(
             'activites' => $activites,
