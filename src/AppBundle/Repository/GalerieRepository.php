@@ -24,4 +24,13 @@ class GalerieRepository extends \Doctrine\ORM\EntityRepository
             //->getQuery()->getResult();
         }
     }
+
+    /**
+     * Liste des albums photos par ordre decroissant
+     */
+    public function findListDesc()
+    {
+        return $this->createQueryBuilder('g')->where('g.statut = 1')->orderBy('g.id', 'DESC')
+                    ->getQuery()->getResult();
+    }
 }

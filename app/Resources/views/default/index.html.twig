@@ -46,6 +46,7 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="countdown-section"></div>
+                    <div id="countdown-3"></div>
                     <div style="font-style: italic; color: #fff; font-size: 18px; font-weight: bold; padding-top: 25px; text-transform: uppercase">
                         De la cloture de la 2ème édition du Festival
                     </div>
@@ -621,51 +622,21 @@
         <div class="container">
             <div class="sec-title2">
                 <span>Galerie</span>
-                <h2>Temps forts édition 1</h2>
+                <h2>Temps forts de l'édition 2018</h2>
             </div>
         </div><!-- .container -->
 
         <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="0" data-autoplay="true" data-autoplay-timeout="8000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
-            <div class="single-gallery">
-                <img src="{{ absolute_url(asset('ressources/img/galerie/01.jpg')) }}" alt="" />
-                <div class="popup-icon">
-                    <a class="image-popup" href="{{ absolute_url(asset('ressources/img/galerie/01.jpg')) }}" title="Allocution du PCO">
-                        <i class="fa fa-plus-circle"></i>
-                    </a>
+            {% for photo in galeries %}
+                <div class="single-gallery">
+                    <img src="{{ asset('uploads/galeries/'~ photo.imageName) | imagine_filter('galerie_cover') }}" alt="{{ photo.titre }}" />
+                    <div class="popup-icon">
+                        <a class="image-popup" href="{{ asset('uploads/galeries/'~ photo.imageName) | imagine_filter('galerie_photo') }}" title="{{ photo.titre }}">
+                            <i class="fa fa-plus-circle"></i>
+                        </a>
+                    </div>
                 </div>
-            </div><!-- .single-gallery -->
-            <div class="single-gallery">
-                <img src="{{ absolute_url(asset('ressources/img/galerie/02.jpg')) }}" alt="" />
-                <div class="popup-icon">
-                    <a class="image-popup" href="{{ absolute_url(asset('ressources/img/galerie/02.jpg')) }}" title="Ouverture du village Tonkpi Nihidaley">
-                        <i class="fa fa-plus-circle"></i>
-                    </a>
-                </div>
-            </div><!-- .single-gallery -->
-            <div class="single-gallery">
-                <img src="{{ absolute_url(asset('ressources/img/galerie/03.jpg')) }}" alt="" />
-                <div class="popup-icon">
-                    <a class="image-popup" href="{{ absolute_url(asset('ressources/img/galerie/03.jpg')) }}" title="Ceremonie du village Tonkpi Nihidaley">
-                        <i class="fa fa-plus-circle"></i>
-                    </a>
-                </div>
-            </div><!-- .single-gallery -->
-            <div class="single-gallery">
-                <img src="{{ absolute_url(asset('ressources/img/galerie/04.jpg')) }}" alt="" />
-                <div class="popup-icon">
-                    <a class="image-popup" href="{{ absolute_url(asset('ressources/img/galerie/04.jpg')) }}" title="Concours Beauté canon">
-                        <i class="fa fa-plus-circle"></i>
-                    </a>
-                </div>
-            </div><!-- .single-gallery -->
-            <div class="single-gallery">
-                <img src="{{ absolute_url(asset('ressources/img/galerie/05.jpg')) }}" alt="" />
-                <div class="popup-icon">
-                    <a class="image-popup" href="{{ absolute_url(asset('ressources/img/galerie/05.jpg')) }}" title="Concert Live populaire">
-                        <i class="fa fa-plus-circle"></i>
-                    </a>
-                </div>
-            </div><!-- .single-gallery -->
+            {% endfor %}
         </div><!-- .rs-carousel -->
     </div>
 

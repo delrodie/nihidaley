@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des albums photos {% endblock %}
+
+{% block body %}
+    <div class="rs-breadcrumbs">
+        <img src="{{ absolute_url(asset('ressources/img/bg2.jpg')) }}" alt="" />
+
+    </div>
+
+    <div id="rs-team" class="rs-team fullwidth-team pt-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="team-name text-center mb-5">LE FESTIVAL EN IMAGE</h2>
+                </div>
+            </div>
+            <div class="row">
+                {% for galerie in galeries %}
+                    <div class="col-lg-4 col-md-6 list-galerie">
+                        <div class="team-item">
+                            <div class="team-img">
+                                {% if galerie.imageName %}
+                            <img src="{{ vich_uploader_asset(galerie, 'imageFile') }}" alt="{{ galerie.titre }}" />
+                            {% else %}
+                                <img src="{{ absolute_url(asset('ressources/img/comite/avatar.jpg')) }}" alt="{{ galerie.titre }}" />
+                                {% endif %}_
+                                <div class="normal-text">
+                                    <span class="subtitle">{{ galerie.titre }} </span>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <div class="display-table">
+                                    <div class="display-table-cell">
+                                        <div class="team-details">
+                                            <h4 class="team-name">
+                                                <a href="{{ absolute_url(path('frontend_galerie_show', {'slug': galerie.slug})) }}">{{ galerie.titre }} </a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="paginator"></div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent () }}
+
+    <script src="{{ absolute_url(asset('ressources/js/pagination.js')) }}"></script>
+    <script>
+        $(document).ready(function() {
+            pagination(9,'.list-galerie','.paginator',3);
+        });
+    </script>
+{% endblock %}

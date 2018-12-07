@@ -26,6 +26,7 @@ class DefaultController extends Controller
         $lundi10 = $em->getRepository('AppBundle:Activite')->findByDay('10'); //dump($samedis01);die();
 
         $actualites = $em->getRepository('AppBundle:Actualite')->findList(1);
+        $galeries = $em->getRepository('AppBundle:Galerie')->findListDesc();
         return $this->render('default/index.html.twig', [
             'samedis01' => $samedis01,
             'dimanche02' => $dimanche02,
@@ -37,7 +38,8 @@ class DefaultController extends Controller
             'samedi08' => $samedi08,
             'dimanche09' => $dimanche09,
             'lundi10' => $lundi10,
-            'actualites' => $actualites
+            'actualites' => $actualites,
+            'galeries' => $galeries
         ]);
     }
 
