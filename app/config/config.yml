@@ -154,6 +154,14 @@ vich_uploader:
           delete_on_update:   true
           delete_on_remove:   true
 
+        slider_image:
+            uri_prefix:         /uploads/sliders
+            upload_destination: '%kernel.root_dir%/../web/uploads/sliders'
+            namer: vich_uploader.namer_uniqid
+
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
 
 liip_imagine:
     resolvers:
@@ -224,6 +232,16 @@ liip_imagine:
                 # create a 2px black border: center the thumbnail on a black background
                 # 4px larger to create a 2px border around the final image
                 background: { size: [370, 235], position: center, color: '#ffffff'}
+
+        slider:
+            quality: 100
+            filters:
+                # create a thumbnail: set size to 120x90 and use the "outbound" mode
+                # to crop the image when the size ratio of the input differs
+                thumbnail: { size: [1500, 691], mode: inset }
+                # create a 2px black border: center the thumbnail on a black background
+                # 4px larger to create a 2px border around the final image
+                background: { size: [1500, 691], position: center, color: '#ffffff'}
 
         base_thumb_w:
             quality: 100
