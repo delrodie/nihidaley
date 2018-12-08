@@ -4,39 +4,44 @@
 
     <div id="rs-slider" class="rs-slider-section">
         <div id="home-slider">
-            <div class="item active">
-                <img src="{{ absolute_url(asset('ressources/img/slider/20.jpg')) }}" alt="Slide1" />
-                <div class="slide-content">
-                    <div class="display-table">
-                        <div class="display-table-cell">
-                            <div class="container">
-                                <div data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">Culture</div>
-                                <h1 class="slider-title" data-animation-in="fadeInLeft" data-animation-out="animate-out">
-                                    <span>L'artisanat et la création au feminin</span>
-                                </h1>
-                                <a href="#" class="primary-btn mr-30" data-animation-in="lightSpeedIn" data-animation-out="animate-out"><i class="fa fa-eye"></i> Voir</a>
+            {% for slider in sliders %}
+                {% if (loop.index == 1) %}
+                    <div class="item active">
+                        <img src="{{ asset('uploads/sliders/'~ slider.imageName) | imagine_filter('slider') }}" alt="{{ slider.titre }}" />
+                        <div class="slide-content">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <div class="container">
+                                        <div data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">{{ slider.type }}</div>
+                                        <h1 class="slider-title" data-animation-in="fadeInLeft" data-animation-out="animate-out">
+                                            <span>{{ slider.titre }}</span>
+                                        </h1>
+                                        <a href="#" class="primary-btn mr-30" data-animation-in="lightSpeedIn" data-animation-out="animate-out"><i class="fa fa-eye"></i> Voir</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                {% else %}
+                    <div class="item active">
+                        <img src="{{ asset('uploads/sliders/'~ slider.imageName) | imagine_filter('slider') }}" alt="{{ slider.titre }}" />
+                        <div class="slide-content">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <div class="container">
+                                        <div data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">{{ slider.type }}</div>
+                                        <h1 class="slider-title" data-animation-in="fadeInLeft" data-animation-out="animate-out">
+                                            <span>{{ slider.titre }}</span>
+                                        </h1>
+                                        <a href="#" class="primary-btn mr-30" data-animation-in="lightSpeedIn" data-animation-out="animate-out"><i class="fa fa-eye"></i> Voir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
 
-            <div class="item">
-                <img src="{{ absolute_url(asset('ressources/img/slider/19.jpg')) }}" alt="Slide2" />
-                <div class="slide-content">
-                    <div class="display-table">
-                        <div class="display-table-cell">
-                            <div class="container">
-                                <div data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">Ceremonie</div>
-                                <h1 class="slider-title" data-animation-in="fadeInUp" data-animation-out="animate-out">
-                                    <span>Ceremonie d'ouverture du village Tonkpi Nihidaley</span>
-                                </h1>
-                                <a href="#" class="primary-btn mr-30" data-animation-in="fadeInUp" data-animation-out="animate-out"><i class="fa fa-eye"></i> Voir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
