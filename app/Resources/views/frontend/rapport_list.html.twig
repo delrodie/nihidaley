@@ -11,19 +11,19 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="row">
-                        {% for actualite in actualites %}
-                            <div class="col-md-6 list-actualite">
+                        {% for rapport in rapports %}
+                            <div class="col-md-6 list-rapport">
                                 <div class="blog-item">
-                                    <div class="blog-img">
-                                        <a href="{{ absolute_url(path('frontend_actualite_show',{'slug': actualite.slug})) }}"><img src="{{ asset('uploads/activites/'~ actualite.imageName) | imagine_filter('actualite_pt') }}" alt="" /></a>
+                                    <div class="blog-img text-center">
+                                        <a href="{{ absolute_url(asset('documents/rapports/'~ rapport.imageName)) }}" target="_blank"><i class="fa fa-file-pdf-o fa-5x"></i></a>
                                     </div>
                                     <div class="blog-details">
                                         <div class="blog-meta">
-                                            <div class="blog-date">{{ actualite.date|date('d M Y') }}</div>
+                                            <div class="blog-date">{{ rapport.date|date('d M Y') }}</div>
                                         </div>
-                                        <h4 class="blog-title"><a href="{{ absolute_url(path('frontend_actualite_show',{'slug': actualite.slug})) }}">{{ actualite.titre }}</a></h4>
-                                        <p>{{ actualite.resume|raw }}</p>
-                                        <a class="readmore-btn" href="{{ absolute_url(path('frontend_actualite_show',{'slug': actualite.slug})) }}">Lire suite
+                                        <h4 class="blog-title"><a href="{{ absolute_url(asset('documents/rapports/'~rapport.imageName)) }}" target="_blank">{{ rapport.titre }}</a></h4>
+                                        <p>{{ rapport.resume|raw }}</p>
+                                        <a class="readmore-btn" href="{{ absolute_url(asset('documents/rapports/'~rapport.imageName)) }}" target="_blank">Télécharger
                                             <i class="fa fa-angle-right"></i></a>
                                     </div>
                                 </div><!-- .blog-item -->
@@ -46,7 +46,7 @@
     <script src="{{ absolute_url(asset('ressources/js/pagination.js')) }}"></script>
     <script>
         $(document).ready(function() {
-            pagination(6,'.list-actualite','.paginator',3);
+            pagination(6,'.list-rapport','.paginator',3);
         });
     </script>
 {% endblock %}
