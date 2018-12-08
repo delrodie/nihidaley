@@ -1,0 +1,72 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent () }} Gestion des rapports{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h1>Gestion des rapports</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_rapport_index'))}}">Documents</a></li>
+            <li class="breadcrumb-item active">Liste</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="box box-warning">
+            <div class="box-header text-right">
+                <a href="{{ absolute_url(path('backend_rapport_new'))}}" class="btn btn-social btn-primary"><i class="fa fa-plus"></i>Ajouter un rapport</a>
+            </div>
+
+            <div class="row">
+                {% for rapport in rapports %}
+                    <div class="col-md-12 col-lg-3 list-rapport">
+                        <div class="box box-default" style="height: 250px">
+
+                            <div class="box-body">
+                                <div class="text-center">
+                                    <i class="fa fa-file-pdf-o fa-3x"></i>
+                                </div>
+                                <h4 class="card-title">
+                                    {% if rapport.statut %}
+                                        <span class="badge badge-warning" style="font-size: 10px;">{{ rapport.date|date('d-m-Y') }}
+                                    {% else %}
+                                        <span class="badge badge-warning" style="font-size: 10px;">{{ rapport.date|date('d-m-Y') }}
+                                    {% endif %}
+                                    {{ rapport.titre }}
+                                </h4>
+                                <p class="card-text text-justify">{{ rapport.resume|raw }}</p>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="{{ absolute_url(path('backend_rapport_edit', {'slug': rapport.slug})) }}" >
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier</button>
+                                    </a>
+                                    <a href="{{ absolute_url(path('backend_rapport_show', {'slug': rapport.slug})) }}" >
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i> Consulter</button>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                {% else %}
+
+                {% endfor %}
+            </div>
+            <div class="paginator"></div>
+
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent () }}
+
+    <script src="{{ absolute_url(asset('ressources/js/pagination.js')) }}"></script>
+    <script>
+        $(document).ready(function() {
+            pagination(8,'.list-rapport','.paginator',3);
+        });
+    </script>
+{% endblock %}

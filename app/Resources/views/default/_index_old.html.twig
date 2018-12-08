@@ -1,0 +1,644 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div id="rs-slider" class="rs-slider-section">
+        <div id="home-slider">
+            <div class="item active">
+                <img src="{{ absolute_url(asset('ressources/img/slider/20.jpg')) }}" alt="Slide1" />
+                <div class="slide-content">
+                    <div class="display-table">
+                        <div class="display-table-cell">
+                            <div class="container">
+                                <div data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">Culture</div>
+                                <h1 class="slider-title" data-animation-in="fadeInLeft" data-animation-out="animate-out">
+                                    <span>L'artisanat et la création au feminin</span>
+                                </h1>
+                                <a href="#" class="primary-btn mr-30" data-animation-in="lightSpeedIn" data-animation-out="animate-out"><i class="fa fa-eye"></i> Voir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="{{ absolute_url(asset('ressources/img/slider/19.jpg')) }}" alt="Slide2" />
+                <div class="slide-content">
+                    <div class="display-table">
+                        <div class="display-table-cell">
+                            <div class="container">
+                                <div data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">Ceremonie</div>
+                                <h1 class="slider-title" data-animation-in="fadeInUp" data-animation-out="animate-out">
+                                    <span>Ceremonie d'ouverture du village Tonkpi Nihidaley</span>
+                                </h1>
+                                <a href="#" class="primary-btn mr-30" data-animation-in="fadeInUp" data-animation-out="animate-out"><i class="fa fa-eye"></i> Voir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="rs-coming-soon">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="countdown-section"></div>
+                    <div id="countdown-3"></div>
+                    <div style="font-style: italic; color: #fff; font-size: 18px; font-weight: bold; padding-top: 25px; text-transform: uppercase">
+                        De la cloture de la 2ème édition du Festival
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rs-about" class="rs-about sec-spacer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="sec-title2">
+                        <span>Le Festival des Arts de la Culture DAN</span>
+                        <h2>Tonkpi Nihidaley</h2>
+                    </div>
+                    <div class="about-des">
+                        <p>Prévue du 1er au 10 décembre 2018 à Man dans l’Ouest de la Côte d’Ivoire, la deuxième édition du TONKPI NIHIDALEY, appellation du Festival des Arts et de la culture Dan, se situe dans un double contexte de sauvegarde de la culture Dan et du Développement de la Région du Tonkpi.</p>
+                        <p>
+                            En effet, dans un monde et à une période où tout est soumis à un perpétuel mouvement de changement à grande échelle, dans un contexte de mondialisation où tout se mélange, le patrimoine culturel apparait comme, à la fois, l’expression de l’identité et de la différence des peuples. Au moment où les progrès des sciences, des techniques et...
+
+                        </p>
+                        <a class="primary-btn" href="{{ absolute_url(path('frontend_presentation')) }}">Lire la suite </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-image mmt-40">
+                        <img class="large" src="{{ absolute_url(asset('ressources/img/09.jpg')) }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="join-our-events sec-spacer gray-color">
+        <div class="container">
+            <div class="sec-title2">
+                <span>Tonkpi Nihidaley</span>
+                <h4>Contribuer à la valorisation et au rayonnement de la culture et de l’identité Dan.</h2>
+            </div>
+            <div class="row choose-list center-box">
+                <div class="col-lg-4">
+                    <div class="choose-item rs-animation-hover">
+                        <p>Contribuer à la promotion et à la préservation des expressions culturelles, artistiques et des sites naturels de la Région du Tonkpi ;</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="choose-item rs-animation-hover">
+                        <p>Constituer une plate-forme de rencontres d’échanges et de promotion des activités relevant de la culture, du tourisme et de l’économie ;</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="choose-item rs-animation-hover">
+                        <p>Faire de la culture un socle du développement de la Région du Tonkpi ; <br>
+                            Contribuer à la consolidation de la cohésion sociale
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rs-events-schedule" class="rs-events-schedule rs-events-schedule2 section-image2 sec-spacer" style="margin-bottom: auto">
+        <div class="container">
+            <div class="sec-title2">
+                <span>Tonkpi Nihidaley</span>
+                <h2>Programme</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="events-schedule-tabs">
+                        <ul class="nav eventday-list">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#sunday">01 - 02 <span>Decembre 2018</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#monday">03 - 04<span>Decembre 2018</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tuesday">05 - 06<span>Decembre 2018</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#friday">07 - 08<span>Decembre 2018</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#saturday">09 - 10<span>Decembre, 2018</span></a>
+                            </li>
+                        </ul>
+
+                        <div class="events-schedule-contents tab-content">
+
+                            <!-- programme du 01 au 02 decembre -->
+                            <div class="tab-pane events-shedule-des active" id="sunday">
+                                <div class="events-shedule-subitmes">
+                                    <ul class="nav eventday-sublist gray-color">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#room1">Samedi 1er</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#room2">Dimanche 2</a>
+                                        </li>
+
+                                    </ul>
+                                    <div class="events-subinner">
+                                        <!--Samedi 1er decembre-->
+                                        <div class="tab-pane events-shedule-subdes active show fade" id="room1">
+                                            {% for activite in samedis01 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <!--Fin samedi 1er-->
+
+                                        <!--Dimanche 02 decembre-->
+                                        <div class="tab-pane events-shedule-subdes fade" id="room2">
+                                            {% for activite in dimanche02 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <!--Fin dimanche 02-->
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- programme du 03 au 04 decembre -->
+                            <div class="tab-pane events-shedule-des fade" id="monday">
+                                <div class="events-shedule-subitmes">
+                                    <ul class="nav eventday-sublist gray-color">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#room4">Lundi 03</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#room5">Mardi 04</a>
+                                        </li>
+
+                                    </ul>
+                                    <div class="events-subinner">
+                                        <!--Lundi 03 decembre 2018-->
+                                        <div class="tab-pane events-shedule-subdes active show fade" id="room4">
+                                            {% for activite in lundi03 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <!-- Fin lundi 03-->
+
+                                        <!--Mardi 04 decembre-->
+                                        <div class="tab-pane events-shedule-subdes fade" id="room5">
+                                            {% for activite in mardi04 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <!-- Fin mardi 04-->
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- programme du 05 au 06 decembre -->
+                            <div class="tab-pane events-shedule-des fade" id="tuesday">
+                                <div class="events-shedule-subitmes">
+                                    <ul class="nav eventday-sublist gray-color">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#room7">Mercredi 05</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#room8">Jeudi 06</a>
+                                        </li>
+
+                                    </ul>
+                                    <div class="events-subinner">
+                                        <!--Hall room 1 start-->
+                                        <div class="tab-pane events-shedule-subdes active show fade" id="room7">
+                                            {% for activite in mercredi05 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <!--Hall room 1 end-->
+
+                                        <!--Programme du jeudi 06 decembre-->
+                                        <div class="tab-pane events-shedule-subdes fade" id="room8">
+
+                                            {% for activite in jeudi06 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- programme du 07 au 08 decembre -->
+                            <div class="tab-pane events-shedule-des fade" id="friday">
+                                <div class="events-shedule-subitmes">
+                                    <ul class="nav eventday-sublist gray-color">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#room10">Vendredi 07</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#room11">Samedi 08</a>
+                                        </li>
+
+                                    </ul>
+                                    <div class="events-subinner">
+                                        <!--Programme du vendredi 06 decembre-->
+                                        <div class="tab-pane events-shedule-subdes  active show fade" id="room10">
+                                            {% for activite in vendredi07 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+
+                                        <!--Programme du samedi 07 decembre-->
+                                        <div class="tab-pane events-shedule-subdes fade" id="room11">
+                                            {% for activite in samedi08 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- programme du 09 au 10 decembre -->
+                            <div class="tab-pane events-shedule-des fade" id="saturday">
+                                <div class="events-shedule-subitmes">
+                                    <ul class="nav eventday-sublist gray-color">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#room12">Dimanche 09</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#room13">Lundi 10</a>
+                                        </li>
+
+                                    </ul>
+                                    <div class="events-subinner">
+                                        <!--programme du dimanche 09-->
+                                        <div class="tab-pane events-shedule-subdes  active show fade" id="room12">
+                                            {% for activite in dimanche09 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+
+                                        <!-- programme du lundi 10-->
+                                        <div class="tab-pane events-shedule-subdes fade" id="room13">
+                                            {% for activite in lundi10 %}
+                                                <div class="events-items">
+                                                    <div class="row"><div class="col-lg-3 text-center">
+                                                            <div class="event-author">
+                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
+                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <div class="event-shedule-info">
+                                                                <span class="meta-date"></span>
+                                                                <h3 class="event-title">{{ activite.titre }} </h3>
+                                                                <p class="event-des">
+                                                                    {{ activite.resume|raw }}
+                                                                </p>
+                                                                <div class="share-section2">
+                                                                    <div class="event-btn">
+                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
+                                                                    </div>
+                                                                    <div class="social-shareicons">
+                                                                        <span class="share-title"> Lieu : </span>
+                                                                        <ul class="share-link">
+                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <!--Hall room 2 -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="rs-blog" class="rs-blog sec-spacer">
+        <div class="container">
+            <div class="sec-title2">
+                <span>Tonkpi Nihidaley</span>
+                <h2>Actualités</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="false" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="3" data-md-device-nav="false" data-md-device-dots="false">
+                        {% for actualite in actualites %}
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <a href="{{ absolute_url(path('frontend_actualite_show',{'slug': actualite.slug})) }}" title="{{ actualite.titre }}"><img src="{{ asset('uploads/activites/'~ actualite.imageName) | imagine_filter('actualite_pt') }}" alt="{{ actualite.titre }}" /></a>
+                                </div>
+                                <div class="blog-details">
+                                    <div class="blog-date">{{ actualite.date|date('d M Y') }}</div>
+                                    <h4 class="blog-title"><a href="{{ absolute_url(path('frontend_actualite_show',{'slug': actualite.slug})) }}" title="{{ actualite.titre }}">{{ actualite.titre }}</a></h4>
+                                    <p>{{ actualite.resume|raw }}</p>
+                                    <a class="readmore-btn" href="{{ absolute_url(path('frontend_actualite_show',{'slug': actualite.slug})) }}">Lire suite</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div><!-- .row -->
+            </div>
+        </div><!-- .container -->
+    </div>
+
+    <div class="rs-gallery rs-gallery-section sec-spacer section-image2 pt-100">
+        <div class="container">
+            <div class="sec-title2">
+                <span>Galerie</span>
+                <h2>Temps forts de l'édition 2018</h2>
+            </div>
+        </div><!-- .container -->
+
+        <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="0" data-autoplay="true" data-autoplay-timeout="8000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
+            {% for photo in galeries %}
+                <div class="single-gallery">
+                    <img src="{{ asset('uploads/galeries/'~ photo.imageName) | imagine_filter('galerie_cover') }}" alt="{{ photo.titre }}" />
+                    <div class="popup-icon">
+                        <a class="image-popup" href="{{ asset('uploads/galeries/'~ photo.imageName) | imagine_filter('galerie_photo') }}" title="{{ photo.titre }}">
+                            <i class="fa fa-plus-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div><!-- .rs-carousel -->
+    </div>
+
+{% endblock %}
+
