@@ -14,7 +14,7 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        //$samedis01 = $em->getRepository('AppBundle:Activite')->findByDay('01'); //dump($samedis01);die();
+        $samedis01 = $em->getRepository('AppBundle:Activite')->findByDay('01'); //dump($samedis01);die();
         //$dimanche02 = $em->getRepository('AppBundle:Activite')->findByDay('02'); //dump($samedis01);die();
         //$lundi03 = $em->getRepository('AppBundle:Activite')->findByDay('03'); //dump($samedis01);die();
         //$mardi04 = $em->getRepository('AppBundle:Activite')->findByDay('04'); //dump($samedis01);die();
@@ -29,7 +29,7 @@ class DefaultController extends Controller
         $galeries = $em->getRepository('AppBundle:Galerie')->findListDesc();
         $sliders = $em->getRepository('AppBundle:Slider')->findList(1);
         return $this->render('default/index.html.twig', [
-            //'samedis01' => $samedis01,
+            'samedis01' => $samedis01,
             //'dimanche02' => $dimanche02,
             //'lundi03' => $lundi03,
             //'mardi04' => $mardi04,
