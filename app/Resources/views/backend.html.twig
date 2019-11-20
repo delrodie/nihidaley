@@ -186,20 +186,6 @@
                         <li><a href="{{ absolute_url(path('backend_galeriephoto_index')) }}"><i class="fa fa-newspaper"></i> Photos</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fas fa-bullhorn"></i>
-                        <span>Pratique</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{ absolute_url(path('homepage'))}}"><i class="fa fa-user-tie"></i> Transport</a></li>
-                        <li><a href="{{ absolute_url(path('homepage'))}}"><i class="fa fa-newspaper"></i> Hebergement</a></li>
-                        <li><a href="{{ absolute_url(path('homepage'))}}"><i class="fa fa-newspaper"></i> Restauration</a></li>
-                    </ul>
-                </li>
                 <li class="treeview ">
                     <a href="#">
                         <i class="fa fa-cogs"></i>
@@ -213,19 +199,21 @@
                         <li><a href="{{ absolute_url(path('backend_typepresidence_index')) }}"><i class="fa fa-file"></i> Titre de la presidence</a></li>
                     </ul>
                 </li>
-                <li class="treeview ">
-                    <a href="#">
-                        <i class="fa fa-lock"></i>
-                        <span>Securite</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{ absolute_url(path('admin_user_index'))}}"><i class="fa fa-users"></i> Utilisateurs</a></li>
-                        <li><a href="#"><i class="fa fa-user-edit"></i> Redacteurs</a></li>
-                    </ul>
-                </li>
+                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <li class="treeview ">
+                        <a href="#">
+                            <i class="fa fa-lock"></i>
+                            <span>Securite</span>
+                            <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ absolute_url(path('admin_user_index'))}}"><i class="fa fa-users"></i> Utilisateurs</a></li>
+                            <li><a href="#"><i class="fa fa-user-edit"></i> Redacteurs</a></li>
+                        </ul>
+                    </li>
+                {% endif %}
 
             </ul>
         </section>

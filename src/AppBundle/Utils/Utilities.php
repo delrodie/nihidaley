@@ -4,7 +4,7 @@ namespace AppBundle\Utils;
 
 class Utilities
 {
-    public function resume($string, $max_length = 30, $replacement = '', $trunc_at_space = false)
+    public function    resume($string, $max_length = 30, $replacement = '', $trunc_at_space = false)
     {
         $max_length -= strlen($replacement);
         $string_length = strlen($string);

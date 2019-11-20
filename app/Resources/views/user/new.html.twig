@@ -1,16 +1,134 @@
-{% extends 'base.html.twig' %}
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des actualités{% endblock %}
 
 {% block body %}
-    <h1>User creation</h1>
+    <section class="content-header">
+        <h1>Gestion des actualités</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_actualite_index'))}}">actualité</a></li>
+            <li class="breadcrumb-item active">Enregistrement</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="box box-warning">
+                <div class="box-header text-right">
+                    <a href="{{ absolute_url(path('backend_actualite_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des actualités</a>
+                </div>
+                <div class="box-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            {{ form_start(form, {'attr':{'class':'form-horizontal'}}) }}
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Nom utilisateur</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.username)}}
+                                            <span class="help-block">{{ form_errors(form.username)}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Email</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.email)}}
+                                            <span class="help-block">{{ form_errors(form.email)}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Mot de passe</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.plainPassword.first,{'attr':{'class': 'form-control'}})}}
+                                            <span class="help-block">{{ form_errors(form.plainPassword.first)}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Répété le Mot de passe</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(form.plainPassword.second,{'attr':{'class': 'form-control'}})}}
+                                            <span class="help-block">{{ form_errors(form.plainPassword.second)}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12 control-label text-left">Roles</div>
+                                        <div class="checkbox col-sm-6">
+                                            {{ form_widget(form.roles.0)}}
+                                            <label for="appbundle_user_roles_0">Utilisateur</label>
+                                        </div>
+                                        <div class="checkbox col-sm-6">
+                                            {{ form_widget(form.roles.1)}}
+                                            <label for="appbundle_user_roles_1">Administrateur</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12 control-label text-left"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12 control-label text-left"></div>
+                                        <div class="checkbox col-sm-12">
+                                            {{ form_widget(form.enabled)}}
+                                            <label for="appbundle_user_enabled">Activer</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form_rest(form) }}
+                            <div class="box-footer text-right">
+                                <button type="reset" class="btn btn-default">Annuler</button>
+                                <button type="submit" class="btn btn-info">Enregistrer</button>
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+{% endblock %}
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_user_index') }}">Back to the list</a>
-        </li>
-    </ul>
+{% block stylesheets %}
+    {{ parent()}}
+    {% stylesheets
+        'backoffice/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css'
+        'backoffice/tags/tagsinput.css'
+        'backoffice/assets/vendor_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'
+        'backoffice/assets/timepicker/jquery.timepicker.min.css'
+        filter='cssrewrite' output='backoffice/css/editeur.css'
+    %}
+        <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+    {% javascripts
+        'backoffice/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js'
+        'backoffice/js/pages/editor.js'
+        'backoffice/tags/tagsinput.js'
+        'backoffice/assets/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'
+        'backoffice/assets/timepicker/jquery.timepicker.min.js'
+        'backoffice/js/pages/bootstrap-datepicker.fr.min.js'
+        output='backoffice/js/editeur.js'
+    %}
+        <script src="{{ absolute_url(asset_url)}}"></script>
+    {% endjavascripts %}
+    <script>
+        $('#webzine-datepicker input').datepicker({
+            format: "yyyy-mm-dd",
+            todayBtn: "linked",
+            clearBtn: true,
+            language: "fr",
+            multidate: false,
+            autoclose: true
+        });
+        $('.timepicker').timepicker({
+            'timeFormat': 'H:i:s',
+            showInputs: false
+        });
+        $('#appbundle_actualite_contenu').wysihtml5();
+    </script>
+
 {% endblock %}

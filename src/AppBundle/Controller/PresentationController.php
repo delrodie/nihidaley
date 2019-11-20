@@ -48,6 +48,7 @@ class PresentationController extends Controller
             $em = $this->getDoctrine()->getManager();
             $resume = $utilities->resume($presentation->getContenu(), 100, '...', true);
             $presentation->setResume($resume);
+            $presentation->setStatut(true);
             $em->persist($presentation);
             $em->flush();
 
@@ -90,6 +91,8 @@ class PresentationController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $resume = $utilities->resume($presentation->getContenu(), 100, '...', true);
+            $presentation->setStatut(true);
+            $presentation->setResume($resume);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('backend_presentation_show', array('slug' => $presentation->getSlug()));

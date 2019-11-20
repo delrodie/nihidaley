@@ -19,9 +19,12 @@ class ActualiteController extends Controller
      */
     public function listAction()
     {
+        $em = $this->getDoctrine()->getManager();
         $actualites = $this->actualiteRepository()->findList(1);
+        $presentation = $em->getRepository("AppBundle:Presentation")->findOneBy(['statut'=>true], ['id'=>'DESC']);
         return $this->render('frontend/actualite_list.html.twig',[
-            'actualites' => $actualites
+            'actualites' => $actualites,
+            'presentation' => $presentation
         ]);
     }
 
