@@ -23,7 +23,7 @@ class ActiviteController extends Controller
      */
     public function listAction()
     {
-        $activites = $this->activiteRepository()->findList(1);
+        $activites = $this->activiteRepository()->findActivite();
 
         return $this->render('frontend/activite_list.html.twig',[
             'activites' => $activites,

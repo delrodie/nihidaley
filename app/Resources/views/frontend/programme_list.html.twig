@@ -14,16 +14,16 @@
                         <!-- Nav tabs -->
                         <ul class="nav eventday-list">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#sunday">01 - 02 - 03 <span>DECEMBRE 2018</span></a>
+                                <a class="nav-link active" data-toggle="tab" href="#sunday">08 - 09 <span>DECEMBRE 2019</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#monday">04 - 05 - 06<span>DECEMBRE 2018</span></a>
+                                <a class="nav-link" data-toggle="tab" href="#monday">10 - 11 <span>DECEMBRE 2019</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tuesday">07 - 08<span>DECEMBRE 2018</span></a>
+                                <a class="nav-link" data-toggle="tab" href="#tuesday">12 - 13<span>DECEMBRE 2019</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#friday">09 - 10<span>DECEMBRE 2018</span></a>
+                                <a class="nav-link" data-toggle="tab" href="#friday">14<span>DECEMBRE 2018</span></a>
                             </li>
                         </ul>
 
@@ -35,20 +35,17 @@
                                 <div class="events-shedule-subitmes">
                                     <ul class="nav eventday-sublist gray-color">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#room1">Samedi 1er</a>
+                                            <a class="nav-link active" data-toggle="tab" href="#room1">Dimanche 08</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#room2">Dimache 02</a>
+                                            <a class="nav-link" data-toggle="tab" href="#room2">Lundi 09</a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#room3">Lundi 03</a>
-                                        </li>
                                     </ul>
                                     <div class="events-subinner">
                                         <!--Samedi 01 decembre 2018-->
                                         <div class="tab-pane events-shedule-subdes active show fade" id="room1">
-                                            {% for activite in samedi01 %}
+                                            {% for activite in jour01 %}
                                                 <div class="events-items">
                                                     <div class="row">
                                                         <div class="col-lg-4 text-center">
@@ -83,7 +80,7 @@
 
                                         <!--Dimanche 02 decembre 2018-->
                                         <div class="tab-pane events-shedule-subdes fade" id="room2">
-                                            {% for activite in dimanche02 %}
+                                            {% for activite in jour02 %}
                                                 <div class="events-items">
                                                     <div class="row">
                                                         <div class="col-lg-4 text-center">
@@ -116,40 +113,6 @@
                                         </div>
                                         <!-- /Dimanche 02 decembre 2018-->
 
-                                        <!--Lundi 03 decembre 2018-->
-                                        <div class="tab-pane events-shedule-subdes fade" id="room3">
-                                            {% for activite in lundi03 %}
-                                                <div class="events-items">
-                                                    <div class="row">
-                                                        <div class="col-lg-4 text-center">
-                                                            <div class="event-author">
-                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
-                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="event-shedule-info">
-                                                                <span class="meta-date"></span>
-                                                                <h3 class="event-title">{{ activite.titre }} </h3>
-                                                                <p class="event-des"></p>
-                                                                <div class="share-section2">
-                                                                    <div class="event-btn">
-                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
-                                                                    </div>
-                                                                    <div class="social-shareicons">
-                                                                        <span class="share-title"> Lieu : </span>
-                                                                        <ul class="share-link">
-                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                        <!--Hall room 3 end-->
                                     </div>
                                 </div>
                             </div>
@@ -160,20 +123,17 @@
                                 <div class="events-shedule-subitmes">
                                     <ul class="nav eventday-sublist gray-color">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#room4">Mardi 04</a>
+                                            <a class="nav-link active" data-toggle="tab" href="#room4">Mardi 10</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#room5">Mercredi 05</a>
+                                            <a class="nav-link" data-toggle="tab" href="#room5">Mercredi 11</a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#room6">Jeudi 06</a>
-                                        </li>
                                     </ul>
                                     <div class="events-subinner">
                                         <!--Mardi 04 decembre 2018-->
                                         <div class="tab-pane events-shedule-subdes active show fade" id="room4">
-                                            {% for activite in mardi04 %}
+                                            {% for activite in jour03 %}
                                                 <div class="events-items">
                                                     <div class="row">
                                                         <div class="col-lg-4 text-center">
@@ -209,7 +169,7 @@
                                         <!-- Mercredi 05 decembre 2018-->
                                         <div class="tab-pane events-shedule-subdes fade" id="room5">
 
-                                            {% for activite in mercredi05 %}
+                                            {% for activite in jour04 %}
                                                 <div class="events-items">
                                                     <div class="row">
                                                         <div class="col-lg-4 text-center">
@@ -242,40 +202,6 @@
                                         </div>
                                         <!-- /Mercredi 05 decembre 2018-->
 
-                                        <!--Jeudi 06 decembre 2018-->
-                                        <div class="tab-pane events-shedule-subdes fade" id="room6">
-                                            {% for activite in jeudi06 %}
-                                                <div class="events-items">
-                                                    <div class="row">
-                                                        <div class="col-lg-4 text-center">
-                                                            <div class="event-author">
-                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
-                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="event-shedule-info">
-                                                                <span class="meta-date"></span>
-                                                                <h3 class="event-title">{{ activite.titre }} </h3>
-                                                                <p class="event-des"></p>
-                                                                <div class="share-section2">
-                                                                    <div class="event-btn">
-                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
-                                                                    </div>
-                                                                    <div class="social-shareicons">
-                                                                        <span class="share-title"> Lieu : </span>
-                                                                        <ul class="share-link">
-                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                        <!-- Jeudi 06 decembre 2018-->
                                     </div>
                                 </div>
                             </div>
@@ -286,16 +212,16 @@
                                 <div class="events-shedule-subitmes">
                                     <ul class="nav eventday-sublist gray-color">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#room7">Vendredi 07</a>
+                                            <a class="nav-link active" data-toggle="tab" href="#room7">Jeudi 12</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#room8">Samedi 08 </a>
+                                            <a class="nav-link" data-toggle="tab" href="#room8">vendredi 13 </a>
                                         </li>
                                     </ul>
                                     <div class="events-subinner">
                                         <!-- Vendredi 07 decembre 2018-->
                                         <div class="tab-pane events-shedule-subdes active show fade" id="room7">
-                                            {% for activite in vendredi07 %}
+                                            {% for activite in jour05 %}
                                                 <div class="events-items">
                                                     <div class="row">
                                                         <div class="col-lg-4 text-center">
@@ -331,7 +257,7 @@
                                         <!-- Samedi 08 decembre 2018-->
                                         <div class="tab-pane events-shedule-subdes fade" id="room8">
 
-                                            {% for activite in samedi08 %}
+                                            {% for activite in jour06 %}
                                                 <div class="events-items">
                                                     <div class="row">
                                                         <div class="col-lg-4 text-center">
@@ -374,16 +300,13 @@
                                 <div class="events-shedule-subitmes">
                                     <ul class="nav eventday-sublist gray-color">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#room10">Dimanche 09</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#room11">Lundi 10</a>
+                                            <a class="nav-link active" data-toggle="tab" href="#room10">Samedi 14</a>
                                         </li>
                                     </ul>
                                     <div class="events-subinner">
                                         <!-- Dimanche 09 decembre 2018-->
                                         <div class="tab-pane events-shedule-subdes  active show fade" id="room10">
-                                            {% for activite in dimanche09 %}
+                                            {% for activite in jour07 %}
                                                 <div class="events-items">
                                                     <div class="row">
                                                         <div class="col-lg-4 text-center">
@@ -416,40 +339,6 @@
                                         </div>
                                         <!-- /Dimanche 09 decembre 2018-->
 
-                                        <!-- Lundi 10 decembre 2018-->
-                                        <div class="tab-pane events-shedule-subdes fade" id="room11">
-                                            {% for activite in lundi10 %}
-                                                <div class="events-items">
-                                                    <div class="row">
-                                                        <div class="col-lg-4 text-center">
-                                                            <div class="event-author">
-                                                                <span class="author-cty"><i class="icofont icofont-wall-clock"></i></span>
-                                                                <h4>{{ activite.heuredeb|date('H') }}h{{ activite.heuredeb|date('i') }} - {{ activite.heurefin|date('H') }}h{{ activite.heurefin|date('i') }}</h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="event-shedule-info">
-                                                                <span class="meta-date"></span>
-                                                                <h3 class="event-title">{{ activite.titre }} </h3>
-                                                                <p class="event-des"></p>
-                                                                <div class="share-section2">
-                                                                    <div class="event-btn">
-                                                                        <a class="primary-btn" href="{{ absolute_url(path('frontend_activite_show',{'slug': activite.slug})) }}"> Details</a>
-                                                                    </div>
-                                                                    <div class="social-shareicons">
-                                                                        <span class="share-title"> Lieu : </span>
-                                                                        <ul class="share-link">
-                                                                            <li><a href="#">  {{ activite.lieu.libelle }}</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            {% endfor %}
-                                        </div>
-                                        <!-- / Lundi 10 decembre 2018-->
 
                                     </div>
                                 </div>

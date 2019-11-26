@@ -19,6 +19,19 @@ class ActiviteRepository extends \Doctrine\ORM\EntityRepository
     }
 
     /**
+     * Liste des activités de l'édition encours
+     */
+    public function findActivite()
+    {
+        return $this->listDesc()
+                    ->where('a.date LIKE :date')
+                    ->andWhere('a.statut = 1')
+                    ->setParameter('date', '2019'.'%')
+                    ->getQuery()->getResult()
+            ;
+    }
+
+    /**
      * Liste des activités decroissantes
      */
     public function findListDesc()
@@ -36,7 +49,7 @@ class ActiviteRepository extends \Doctrine\ORM\EntityRepository
     public function findByDay($day = null)
     {
         return $this->listDesc()->where('a.date = :day')->andWhere('a.statut = 1')
-                                ->setParameter('day', '2018-12-'.$day)
+                                ->setParameter('day', '2019-12-'.$day)
                                 ->getQuery()->getResult()
             ;
     }
